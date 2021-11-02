@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<head>
+    <title>BookRegister</title>
+    <style>
+        #textinput1{
+            width: 200px
+        }
+        #textinput2{
+            width: 100px
+        }
+    </style>
+</head>
+<body>
+    <form action = "" method = "post">
+        <h1><center>도서 등록</center></h1><br>
+        <fieldset style="width: 500px; height:500px; border: 1; margin:auto;">
+            <legend style= "text-align:center;">책 등록</legend>
+            도서 이름 : <input type="text" name="bookname" id="textinput1"><br><br>
+            저자 : <input type="text" name="author" id="textinput2"><br><br>
+            출판사 : <input type="text" name="publisher" id="textinput2"><br><br>
+
+            도서 품질 : <input type="radio" name="quality">최상
+            <input type="radio" name="quality">상
+            <input type="radio" name="quality">중
+            <input type="radio" name="quality">하 <br><br>
+
+            도서 분류 : 
+            <select id="book_type">
+              <option value="novel">소설</option>
+              <option value="textbook">교재</option>
+              <option value="magazine">잡지</option>
+              <option value="comic">만화</option>
+            </select><br><br>
+            희망 가격 : <input  type="text" name="book_cost" id="textinput2"><br><br>
+            계좌 번호 :
+            <select name="bank_name">
+                <option value="shinhan">신한</option>
+                <option value="KB">KB국민</option>
+                <option value="uri">우리</option>
+                <option value="hana">하나</option>
+            </select>
+            <input type="text" name="account"><br><br>
+            
+            도서의 상태 이미지 등록<br><input type="file" multiple="multiple" id="chooseFile" accept="image/*" onchange="loadFile(this)"><br><br><br><br>
+            <input type="submit" style= "text-align:center;" value="도서 등록">
+        </fieldset>
+    </form>
+
+</body>
