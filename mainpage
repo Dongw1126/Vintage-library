@@ -1,1 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Vintage Library</title>
+    <meta charset="utf-8">
+    <meta name="view" content="width=device-width">
+    <script src="https://kit.fontawesome.com/8eb5905426.js" crossorigin="anonymous"></script>
+    <style>
+        #login{
+            float: right;
+        }
+        #mypage{
+            float: right;
+        }
+        #search{
+            margin-left:-5px;
+            width: 48px;
+            height: 35px;
+        }
+        #btn_group button{
+            border: 1px solid black;
+            background-color: rgba(0,0,0,0);
+            padding: 5px;
+        }
+        #btn_group button:hover{
+            color: white;
+            background-color: goldenrod;
+        }
 
+    </style>
+</head>
+<body>
+    <div id="btn_group">
+        <button id="mypage">마이페이지</button>
+        <button id="login">로그인</button>
+        <center> 
+            <img src="https://user-images.githubusercontent.com/77041622/139581896-51282106-e82a-4dd8-b8e1-f17502e4117b.PNG" class="test" style="position: relative; top: 30px; left: 80px;">
+            <div class="search" style="position: relative; top: 15px;">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="책 이름 또는 저자를 입력하세요." style="width:400px; height:30px;">
+                <button id="search">검색</button>
+            </div>
+        </center>
+    </div>
+</body>
+</html>
