@@ -6,6 +6,9 @@
     <meta name="view" content="width=device-width">
     <script src="https://kit.fontawesome.com/8eb5905426.js" crossorigin="anonymous"></script>
     <style>
+        body{
+             font-family:'Malgun Gothic';
+        }
         #login{
             float: right;
         }
@@ -18,27 +21,59 @@
             height: 35px;
         }
         #btn_group button{
-            border: 1px solid black;
+            border: 1.5px solid #C36A2D;
             background-color: rgba(0,0,0,0);
             padding: 5px;
         }
         #btn_group button:hover{
             color: white;
-            background-color: goldenrod;
+            background-color: #C36A2D;
         }
-
+        #searchbox{
+            padding: 8px;
+            position: absolute;
+            top: 17%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            height: 30px;
+            background-color: #fff;
+            border: 2px solid #C36A2D;
+            border-radius: 30px;
+       }
+       #search-txt{
+           display: flex;
+           padding: 0;
+           width: 240px;
+           border:none;
+           outline: none;
+           float: left;
+           font-size: 1rem;
+           line-height: 30px;
+     }
+     #search-btn{
+         text-decoration: none;
+         float: right;
+         width: 30px;
+         height: 30px;
+         background-color: #fff;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         color: #C36A2D;
+    }
     </style>
 </head>
 <body>
     <div id="btn_group">
-        <button id="mypage">마이페이지</button>
-        <button id="login">로그인</button>
+        <button id="mypage"><b>마이페이지</b></button>
+        <button id="login"><b>로그인</b></button>
         <center> 
-            <img src="https://user-images.githubusercontent.com/77041622/139581896-51282106-e82a-4dd8-b8e1-f17502e4117b.PNG" class="test" style="position: relative; top: 30px; left: 80px;">
-            <div class="search" style="position: relative; top: 15px;">
-                <i class="fas fa-search"></i>
-                <input type="text" placeholder="책 이름 또는 저자를 입력하세요." style="width:400px; height:30px;">
-                <button id="search">검색</button>
+            <img src="https://user-images.githubusercontent.com/77041622/139581896-51282106-e82a-4dd8-b8e1-f17502e4117b.PNG" class="test" style="position: relative; top: 30px; left: 80px;;">
+            <div id="searchbox">
+                <input type="text" id="search-txt" placeholder="책 이름 또는 저자를 입력하세요." style="width:400px; height:30px;">
+                <a id="search-btn" href="#">
+                    <i class="fas fa-search"></i>
+                 </a>
             </div>
         </center>
     </div>
