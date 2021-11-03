@@ -1,0 +1,181 @@
+.MyPageBody{
+  padding: 0;
+  margin: 0;
+}
+
+.Nav {
+  margin-bottom: 20px;
+}
+  
+div{
+  box-sizing: border-box;
+}
+
+hr {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.wrap{
+  background-color: #F8F8F8;  
+}
+
+.MyInfoContainer{  
+  height: 150px;
+  background-color: #614438;    
+
+  display: flex;
+  padding: 16px;
+}
+  
+.MyInfoContainer .name{
+  font-size: 38px;
+  color: #ffffff;
+}
+
+.MyInfoContainer .nickname{
+  font-weight: bold;
+  color: #ffffff;
+} 
+  
+.StatusContainer{
+  padding: 21px 16px;
+  background-color: white;
+  margin-bottom: 10px;
+}
+  
+.StatusContainer .title{
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.StatusContainer .status{
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 15%;
+  margin-bottom: 21px;
+}
+
+.StatusContainer .item{
+  display: flex;
+}
+
+.StatusContainer .number{
+  font-size: 31px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.StatusContainer .text{
+  font-size: 12px;
+  font-weight: normal;
+  color: #3d3d3d;
+  text-align: center;
+}
+
+.listContainer{  
+  padding: 0;
+  background-color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.listContainer .header{  
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  color: black;
+  text-decoration: none;  
+  height: 56px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+
+.listContainer .headerTitle {
+  font-size: 26px;
+  position: relative;
+  text-align: center;
+}
+
+.listContainer .text{
+  font-size: 16px;
+  position: relative;
+}
+
+.listContainer .book {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  margin-left: 5%;
+}
+
+.listContainer .book img{
+  width: 90px;
+  height: 120px;
+  float: left;
+  clear: both;
+}
+
+.listContainer .book .title {
+  margin-top: 20px;
+  margin-left: 40px;
+  font-size: 25px;
+  vertical-align: top;
+}
+
+.listContainer .book .author {
+  margin-left: 40px;
+  font-size: 16px;
+}
+
+.listContainer .book .user {
+  margin-left: 40px;
+  font-size: 16px;
+}
+
+.listContainer .book .status {
+  margin-left: 40px;
+  font-size: 12px;
+}
+
+.listContainer .right{
+  margin-left: auto;
+}
+
+.listContainer .smallLight{
+  font-size: 14px;
+  color: #c2c2c2;  
+}
+.listContainer .smallLight > span{
+  margin-left: 10px;
+}
+
+.listContainer .right .blct{
+  font-size: 14px;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.footerContainer{
+  background-color: white; 
+  display: flex;
+  height: 100px;
+  margin-bottom: 10px;    
+}
+
+.footerContainer .item{
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 16px;
+  text-decoration: none;
+  color: black;
+}
+.footerContainer .item > div:first-child{
+  margin-bottom: 2px;
+}
+
