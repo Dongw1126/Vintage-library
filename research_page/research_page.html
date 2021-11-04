@@ -72,13 +72,14 @@
     float : left;
   }
   .book_button{
-    width : 100px;
+    width : 200px;
     height : 300px;
     float : left;
+
   }
   #main_menu {
-    border-top: solid 1px #dddddd;
-    border-bottom: solid 1px #dddddd;
+    border-top: solid 1px #614438;
+    border-bottom: solid 1px #614438;
     padding: 5px 2px;
   }
   #main_menu li{
@@ -86,6 +87,43 @@
     font size : 12px;
     margin-left : 30px;
   }
+  .trade_status_selling{
+
+    background-color: #614438;
+    border-radius: 20px;
+    text-align: center;
+    height: 40px;
+    width: 100px;
+    margin-left : 30px;
+    line-height: 40px;
+  }
+  .trade_status_trading{
+
+    background-color: #990099;
+    border-radius: 20px;
+    text-align: center;
+    height: 40px;
+    width: 100px;
+    margin-left : 30px;
+    line-height: 40px;
+  }
+
+  input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+
+  }
+  #submit{
+    height: 40px;
+    width: 100px;
+    font-size:16px;
+    background-color:#614438;
+    color : white;
+    border:none;
+    border-radius: 20px;
+    font-weight: bold;
+  }
+
 
 </style>
 
@@ -109,12 +147,12 @@
 <nav id = "main_menu">
   <div class="box" style="text-align:center;">
     <ul>
-      <li><a href="#">메인 페이지</a></li>
+      <li><a href="mainpage.html">메인 페이지</a></li>
       <li><a href="research_page.html">검색 페이지</a></li>
-      <li><a href="#">마이 페이지</a></li>
-      <li><a href="#">장바구니 페이지</a></li>
-      <li><a href="#">도서등록 페이지</a></li>
-      <li><a href="#">회원가입 페이지</a></li>
+      <li><a href="mypage.html">마이 페이지</a></li>
+      <li><a href="cart.html">장바구니 페이지</a></li>
+      <li><a href="BookRegister.html">도서등록 페이지</a></li>
+      <li><a href="Signup.html">회원가입 페이지</a></li>
     </ul>
   </div>
 </nav>
@@ -147,9 +185,15 @@
           <li class = "b_s"> 상태 : <font size = "3" color = "green"><b>상</b></font>
         </div>
         <div class="book_button">
-            <br><br><br><br><br>
-            <input type="checkbox" name="check">
-            <input type="submit" value="장바구니">
+            <br><br><br><br>
+            <div class="trade_status_selling">
+              <font size = "4" color = "white"><b>판매중</b></font>
+            </div>
+            <br>
+            <form action="cart.html">
+              <input type="checkbox" name="book" value="book1">
+              <input type="submit" id="submit" value="장바구니">
+            </form>
         </div>
 
         <div class = "book_image">
@@ -164,9 +208,15 @@
           <li class = "b_s"> 상태 : <font size = "3" color = "orange"><b>중</b></font>
         </div>
         <div class="book_button">
-            <br><br><br><br><br>
-            <input type="checkbox" name="check">
-            <input type="submit" value="장바구니">
+            <br><br><br><br>
+            <div class="trade_status_trading">
+              <font size = "4" color = "white"><b>거래중</b></font>
+            </div>
+            <br>
+            <form action="cart.html">
+              <input type="checkbox" name="book" value="book2">
+              <input type="submit" id="submit" value="장바구니">
+            </form>
         </div>
 
         <div class = "book_image">
@@ -181,11 +231,16 @@
           <li class = "b_s"> 상태 : <font size = "3" color = "red"><b>하</b></font>
         </div>
         <div class="book_button">
-            <br><br><br><br><br>
-            <input type="checkbox" name="check">
-            <input type="submit" value="장바구니">
+            <br><br><br><br>
+            <div class="trade_status_selling">
+              <font size = "4" color = "white"><b>판매중</b></font>
+            </div>
+            <br>
+            <form action="cart.html">
+              <input type="checkbox" name="book" value="book3">
+              <input type="submit" id="submit" value="장바구니">
+            </form>
         </div>
-
 
 
 
