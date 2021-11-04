@@ -1,0 +1,57 @@
+table {
+    width: 50%;
+    border-top: 1px solid #C8C6C6;
+    border-collapse: collapse;
+}
+.except{
+    text-align: left;
+}
+th, td {
+    text-align: center;
+    border-bottom: 1px solid #C8C6C6;
+    border-left: 1px solid #C8C6C6;
+    padding: 10px;
+    border-right: none;
+    border-left : none;
+}
+
+tr:first-child{
+    border-top : 2px solid #79B4B7;
+}
+
+th:first-child, td:first-child {    
+    border-left: none;
+}
+
+#price-div{
+    background-color: #F4F4F4;
+    width: 50%;
+    font-size: 20px;
+}
+
+#firstRow{
+    background-color: #F8F0DF;
+}
+
+.btn {
+    -webkit-border-radius: 10;
+    -moz-border-radius: 10;
+    border-radius: 10px;
+    font-family: Arial;
+    color: #000000;
+    font-size: 20px;
+    background: #d9a520;
+    padding: 10px 20px 10px 20px;
+    border: solid #ffffff 0px;
+    text-decoration: none;
+  }
+  
+  .btn:hover {
+    background: #d9a520;
+    background-image: -webkit-linear-gradient(top, #d9a520, #99731a);
+    background-image: -moz-linear-gradient(top, #d9a520, #99731a);
+    background-image: -ms-linear-gradient(top, #d9a520, #99731a);
+    background-image: -o-linear-gradient(top, #d9a520, #99731a);
+    background-image: linear-gradient(to bottom, #d9a520, #99731a);
+    text-decoration: none;
+  }
