@@ -1,0 +1,64 @@
+th,td{
+    border: 1px solid #444444;
+    padding: 10px;
+}
+
+.header{
+    height: 150px;display: flex;padding: 16px;
+    background-color:#614438;
+    color:white; text-align: center;
+    margin: auto;
+}
+
+.headerTitle{
+    background-color:#614438;
+    color:white;
+}
+
+.mainfield{
+    border: 1;
+    height: 800px;
+}
+
+.mainfield .signup{
+width: 500px; height:400px;
+font-weight: bold; margin:auto;
+}
+
+.mainfield .register{
+    width: 500px; height:400px;
+    font-weight: bold;
+}
+
+.tableform{
+    border: 5px solid #444444;
+    border-collapse: collapse;
+    width:1000px; margin-left:100%;
+}
+
+.tableform t{
+    border: 1px solid #444444;
+}
+
+.tableform .t .tt{
+    background-color: #92553a;
+    color:white;
+}
+
+.line{
+border:none; border:5px double #614438;
+
+}
+
+.textbox{
+height: 35px; width: 300px;
+}
+
+.textbox2{
+    height: 25px; width: 300px;
+}
+
+.selectbox{
+    height: 30px; width: 50px;
+}
+
