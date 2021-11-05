@@ -4,13 +4,12 @@ function getPrice(){ // 장바구니에 담긴 가격 총합을 구하는 함수
     priceInt.forEach(v => price += v); // 총합 Int 계산
     price = price.toLocaleString('ko-KR'); // 이후 ko-KR에 맞춰 String 포맷 맞춤
     console.log(price);
-    if(price != 0){ // 장바구니가 빈 경우
-        totalPrice.innerHTML = "장바구니에 아무것도 없습니다."
-    }
-    else{ // 장바구니에 무언가 있음
+    if(price != 0){ // 장바구니에 무언가 있음
         totalPrice.innerHTML = "총 가격 : " + price + "원";
     }
-    
+    else{ // 장바구니가 빈 경우
+        totalPrice.innerHTML = "장바구니에 아무것도 없습니다."
+    }    
 }
 const totalPrice = document.getElementById('total-price'); // 총합을 나타내는 h3
 const priceList = document.querySelectorAll('.book-price'); // 모든 book-price 모음
