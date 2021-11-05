@@ -23,23 +23,22 @@
 <body>
     <link rel="stylesheet" href="./cart.css">
 
-    <center>        
-
-    <div>
+    <div id="all-div">
+        <center>
         <img src="https://user-images.githubusercontent.com/77041622/139581896-51282106-e82a-4dd8-b8e1-f17502e4117b.PNG" class="test" style="position: relative; top: 30px; left: 80px;">
         <div class="search" style="position: relative; top: 15px;">
             <i class="fas fa-search"></i>
             <input type="text" placeholder="책 이름 또는 저자를 입력하세요." style="width:400px; height:30px;">
             <button id="search">검색</button>
         </div>
+    </center>
         <br><br><br>
-        <div id="장바구니텍스트">
-            <h2>장바구니</h2>
+        <div id="cart-text-div">
+            <h3 id="cart-text">장바구니 상품</h3>
         </div>
-        <br><br>
-        <table id="dynamicTable">
+        <table id="cart-table">
             <thead>
-                <tr id="firstRow">
+                <tr id="first-row">
                     <th>이미지</th>
                     <th>상품명</th>
                     <th>가격</th>
@@ -48,39 +47,42 @@
                     <th>삭제</th>
                 </tr>
             </thead>
-            <tbody id="dynamicTbody">
+            <tbody id="cart-table-body">
                 <tr>
-                    <td><img height="50px" src="./book_image.png" alt="book_image"></td>
-                    <td class="except"><a href="book_link"">클린 코드 Clean Code - 애자일 소프트웨어 장인 정신</a></td>
-                    <td class="priceList">15,000원</td>
-                    <td>중</td>
-                    <td>A0001</td>
-                    <td><button>삭제</button></td>
+                    <td><img class="book-image" src="./book_image.png" alt="book_image"></td>
+                    <td class="book-title"><a href="book_link"">클린 코드 Clean Code - 애자일 소프트웨어 장인 정신</a></td>
+                    <td class="book-price">15,000원</td>
+                    <td class="book-quality">중</td>
+                    <td class="book-id">A0001</td>
+                    <td><button class="delete-button">삭제</button></td>
                 </tr>
                 <tr>
-                    <td><img height="50px" src="./book_image.png" alt="book_image"></td>
-                    <td class="except"><a href="book_link">가상 면접 사례로 배우는 대규모 시스템 설계 기초</a></td>
-                    <td class="priceList">25,000원</td>
-                    <td>최상</td>
-                    <td>A0002</td>
-                    <td><button>삭제</button></td>
+                    <td><img class="book-image" src="./book_image.png" alt="book_image"></td>
+                    <td class="book-title"><a href="book_link">가상 면접 사례로 배우는 대규모 시스템 설계 기초</a></td>
+                    <td class="book-price">25,000원</td>
+                    <td class="book-quality">최상</td>
+                    <td class="book-id">A0002</td>
+                    <td><button class="delete-button">삭제</button></td>
                 </tr>
                 <tr>
-                    <td><img height="50px" src="./book_image.png" alt="book_image"></td>
-                    <td class="except"><a href="book_link"">이것이 취업을 위한 코딩 테스트다 with 파이썬</a></td>
-                    <td class="priceList">10,000원</td>
-                    <td>하</td>
-                    <td>A0003</td>
-                    <td><button>삭제</button></td>
+                    <td><img class="book-image" src="./book_image.png" alt="book_image"></td>
+                    <td class="book-title"><a href="book_link">이것이 취업을 위한 코딩 테스트다 with 파이썬</a></td>
+                    <td class="book-price">10,000원</td>
+                    <td class="book-quality">하</td>
+                    <td class="book-id">A0003</td>
+                    <td><button class="delete-button">삭제</button></td>
                 </tr>
             </tbody>
         </table>        
+        <br>
         <div id="price-div">
-            <h3 id="totalPrice">총 가격 : </h3>
+            <h3 id="total-price">총 가격 : </h3>
         </div>
-        <button class="btn" onClick="location.href='./order'">구매하기</button>
+        <br>
+        <div id="buy-div">
+            <button class="buy-button" onClick="location.href='./order'">구매하기</button>
+        </div>
     </div>
-    </center>
     <script src="cart.js"></script>
 </body>
 </html>
