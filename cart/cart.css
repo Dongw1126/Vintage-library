@@ -34,6 +34,7 @@ tr:last-child{
     height: 50px;
 }
 
+
 .book-title{
     text-align: left;
 }
@@ -61,13 +62,17 @@ tr:last-child{
     text-decoration: none;
 }
 
+#book-title-head{
+    width: 45%;
+}
 
-#cart-text-div{
+#cart-table{
+    table-layout: fixed;
     width: 75%;
     margin: 0 auto;
 }
 
-#cart-table{
+#cart-text-div{
     width: 75%;
     margin: 0 auto;
 }
@@ -87,6 +92,7 @@ tr:last-child{
 }
 
 #first-row{
+
     background-color: #F8F0DF;
 }
 
