@@ -41,23 +41,32 @@
         }
 
     </script>
+    <style>
+        body {
+            background-color: #F3F0D7;
+        }
+    </style>
 </head>
 <body>
-    <form name="signup" action = "../mainpage/mainpage.html" method = "post" onsubmit="return check()">
-        <a href="../mainpage/mainpage.html" class="header" ><img style="margin:auto;"src="https://user-images.githubusercontent.com/77041622/139581896-51282106-e82a-4dd8-b8e1-f17502e4117b.PNG" ></img></a><br>
-        <h1 class="headerTitle"><center>회원가입</center></h1>
-        <hr class="line"><br>
-        <div class="mainfield">
-            <div class="signup">
-                <font size="4px;">이름 </font> <br><input class="textbox" type="text" id="name"><br><br>
-                <font size="4px;">아이디 </font><br><input class="textbox" type="text" id="id"><br><br>
-                <font size="4px;">비밀번호 </font><br><input class="textbox" type="text" id="pw"><br><br>
-                <font size="4px;">이메일 </font><br><input class="textbox" type="text" id="email"><br><br>
-                <font size="4px;">주소 </font><br><input class="textbox" type="text" id="address"><br><br>
-                <input style="height: 45px;width: 100px;" type="submit" value="회원가입">
-            </div>
+    <form name="signup" action="../mainpage/login.html" method="post" id="loginForm" onsubmit="return check()">
+        <h2>SignUp!</h2>
+        <div class="infForm">
+            <input type="text" id="name" class = "inf" placeholder="Name">
         </div>
-        <hr class="line">  
+        <div id="idForm">
+          <input type="text" id="id" placeholder="ID">
+        </div>
+        <div id="passForm">
+          <input type="password" id="pw" placeholder="PW">
+        </div>
+        <div class="infForm">
+            <input type="text" id="email" class = "inf" placeholder="Email">
+        </div>  
+        <div class="infForm">
+            <input type="text" id="address" class = "inf" placeholder="Address">
+        </div>
+        <input value="회원가입" type="submit" id="btn">
+            
     </form>
 
 </body>
