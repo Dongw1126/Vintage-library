@@ -18,6 +18,7 @@ th,td{
 .mainfield{
     border: 1;
     height: 800px;
+    margin:auto;
 }
 
 .mainfield .signup{
@@ -26,14 +27,15 @@ font-weight: bold; margin:auto;
 }
 
 .mainfield .register{
-    width: 500px; height:400px;
+    width: 35%;
     font-weight: bold;
+    margin:auto;
 }
 
 .tableform{
     border: 5px solid #444444;
     border-collapse: collapse;
-    width:1000px; margin-left:100%;
+    width:155%; margin: auto;
 }
 
 .tableform t{
