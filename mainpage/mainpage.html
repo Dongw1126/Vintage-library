@@ -31,11 +31,10 @@
         }
         #searchbox{
             padding: 8px;
-            position: absolute;
-            top: 17%;
-            left: 50%;
-            transform: translate(-50%,-50%);
-            height: 30px;
+            position: relative;
+            top: 15px;
+            height:30px;
+	width: 430px;
             background-color: #fff;
             border: 2px solid #C36A2D;
             border-radius: 30px;
@@ -65,7 +64,7 @@
 </head>
 <body>
     <div id="btn_group">
-        <button id="mypage"><b>마이페이지</b></button>
+        <button id="mypage" onClick="location.href='../mypage/mypage.html'"><b>마이페이지</b></button>
         <button id="login"><b>로그인</b></button>
         <center> 
             <img src="https://user-images.githubusercontent.com/77041622/139581896-51282106-e82a-4dd8-b8e1-f17502e4117b.PNG" class="test" style="position: relative; top: 30px; left: 80px;;">
