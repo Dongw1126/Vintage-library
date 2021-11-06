@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<head>
+    <title>SignUp</title>
+    <link rel="stylesheet" href="register_signup.css">
+    <script>
+        function check(){
+            if(signup.id.value == ""){
+                alert("아이디를 입력해주셔야합니다!");
+                signup.id.focus();
+                return false;
+            }
+            else if(signup.pw.value == ""){
+                alert("비밀번호를 입력해주셔야합니다!");
+                signup.pw.focus();
+                return false;
+            }
+            else {
+                alert("로그인에 성공하였습니다");
+                return true;
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <form name="login" action = "../mainpage/mainpage.html" method = "post" onsubmit="return check()">
+        <a href="../mainpage/mainpage.html" class="header" ><img style="margin:auto;"src="https://user-images.githubusercontent.com/77041622/139581896-51282106-e82a-4dd8-b8e1-f17502e4117b.PNG" ></img></a><br>
+        <h1 class="headerTitle"><center>로그인</center></h1>
+        <hr class="line"><br>
+        <div class="mainfield">
+            <div class="signup">
+                <font size="4px;">아이디 </font><br><input class="textbox" type="text" id="id"><br><br>
+                <font size="4px;">비밀번호 </font><br><input class="textbox" type="text" id="pw"><br><br>
+                <input style="height: 45px;width: 100px;" type="submit" value="로그인">
+                <input style="height: 45px;width: 100px;" type="button" value="회원가입" onclick = "location.href = 'Signup.html'" >
+
+            </div>
+        </div>
+        <hr class="line">  
+    </form>
+
+</body>
+</html>

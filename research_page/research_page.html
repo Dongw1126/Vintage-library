@@ -72,13 +72,14 @@
     float : left;
   }
   .book_button{
-    width : 100px;
+    width : 200px;
     height : 300px;
     float : left;
+
   }
   #main_menu {
-    border-top: solid 1px #dddddd;
-    border-bottom: solid 1px #dddddd;
+    border-top: solid 1px #614438;
+    border-bottom: solid 1px #614438;
     padding: 5px 2px;
   }
   #main_menu li{
@@ -86,6 +87,55 @@
     font size : 12px;
     margin-left : 30px;
   }
+  .trade_status_selling{
+
+    background-color: #614438;
+    border-radius: 20px;
+    text-align: center;
+    height: 40px;
+    width: 100px;
+    margin-left : 30px;
+    line-height: 40px;
+  }
+  .trade_status_trading{
+
+    background-color: #990099;
+    border-radius: 20px;
+    text-align: center;
+    height: 40px;
+    width: 100px;
+    margin-left : 30px;
+    line-height: 40px;
+  }
+
+  input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+
+  }
+  #submit{
+    height: 40px;
+    width: 100px;
+    font-size:16px;
+    background-color:#614438;
+    color : white;
+    border:none;
+    border-radius: 20px;
+    font-weight: bold;
+  }
+  a:link{
+    color : black;
+  }
+  a:visited{
+    color : blue;
+  }
+  a:hover{
+    color : red;
+  }
+  a:active{
+    color : green;
+  }
+
 
 </style>
 
@@ -109,12 +159,12 @@
 <nav id = "main_menu">
   <div class="box" style="text-align:center;">
     <ul>
-      <li><a href="#">메인 페이지</a></li>
-      <li><a href="research_page.html">검색 페이지</a></li>
-      <li><a href="#">마이 페이지</a></li>
-      <li><a href="#">장바구니 페이지</a></li>
-      <li><a href="#">도서등록 페이지</a></li>
-      <li><a href="#">회원가입 페이지</a></li>
+      <li><a href="../mainpage/mainpage.html">메인 페이지</a></li>
+      <li><a href="../research_page/research_page.html">검색 페이지</a></li>
+      <li><a href="../mypage/mypage.html">마이 페이지</a></li>
+      <li><a href="../cart/cart.html">장바구니 페이지</a></li>
+      <li><a href="../SignUp&BookRegister/BookRegister.html">도서등록 페이지</a></li>
+      <li><a href="../SignUp&BookRegister/Signup.html">회원가입 페이지</a></li>
     </ul>
   </div>
 </nav>
@@ -133,23 +183,30 @@
       <div class="box">
         <h2>전체 상품</h2>
         <div class="clear"></div>
+        <form action="cart.html">
 
         <div class = "book_image">
-          <img src="https://image.aladin.co.kr/product/27669/16/cover500/8962623811_1.jpg" width = "232px" height = "302px" style="vertical-align:middle;">
+          <A href="book1_detailpage.html" target="blank"><img src="https://image.aladin.co.kr/product/27669/16/cover500/8962623811_1.jpg" width = "232px" height = "302px" style="vertical-align:middle;"></A>
         </div>
         <div class = "book_detail">
           <br>
-          <li class = "b_t"> [국내 도서] 빛의 양자 컴퓨터</li>
+          <A href="book1_detailpage.html" target="blank"><li class = "b_t"> [국내 도서] 빛의 양자 컴퓨터</li></A>
           <li class = "b_a"> 후루사와 아키라(지은이), 채은미(옮긴이)</li>
           <li class = "b_a"> 동아시아 | 2021년 8월 </li>
           <li class = "b_m"> 15,000원 -> <span>13,500원</span> </li>
-          <li class = "b_r"> 리뷰 <span>2</span> 평점 <span>4.5/5</span> </li>
+          <li class = "b_r"> 평점 <span>4.5/5</span> </li>
           <li class = "b_s"> 상태 : <font size = "3" color = "green"><b>상</b></font>
         </div>
         <div class="book_button">
-            <br><br><br><br><br>
-            <input type="checkbox" name="check">
-            <input type="submit" value="장바구니">
+            <br><br><br><br>
+            <div class="trade_status_selling">
+              <font size = "4" color = "white"><b>판매중</b></font>
+            </div>
+            <br>
+
+              <input type="checkbox" name="book" value="book1">
+              <input type="submit" id="submit" value="장바구니">
+
         </div>
 
         <div class = "book_image">
@@ -160,13 +217,19 @@
           <li class = "b_a"> 김종현(지은이)</li>
           <li class = "b_a"> 생능 | 2019년 2월 </li>
           <li class = "b_m"> 28,000원 -> <span>27,160원</span> </li>
-          <li class = "b_r"> 리뷰 <span>1</span> 평점 <span>4.1/5</span> </li>
+          <li class = "b_r"> 평점 <span>4.1/5</span> </li>
           <li class = "b_s"> 상태 : <font size = "3" color = "orange"><b>중</b></font>
         </div>
         <div class="book_button">
-            <br><br><br><br><br>
-            <input type="checkbox" name="check">
-            <input type="submit" value="장바구니">
+            <br><br><br><br>
+            <div class="trade_status_trading">
+              <font size = "4" color = "white"><b>거래중</b></font>
+            </div>
+            <br>
+
+              <input type="checkbox" name="book" value="book2">
+              <input type="submit" id="submit" value="장바구니">
+
         </div>
 
         <div class = "book_image">
@@ -177,19 +240,24 @@
           <li class = "b_a"> 조너선 스타인하트(지은이), 오현석(옮긴이)</li>
           <li class = "b_a"> 책만 | 2021년 4월 </li>
           <li class = "b_m"> 35,000원 -> <span>31,500원</span> </li>
-          <li class = "b_r"> 리뷰 <span>4</span> 평점 <span>3.5/5</span> </li>
+          <li class = "b_r"> 평점 <span>3.5/5</span> </li>
           <li class = "b_s"> 상태 : <font size = "3" color = "red"><b>하</b></font>
         </div>
         <div class="book_button">
-            <br><br><br><br><br>
-            <input type="checkbox" name="check">
-            <input type="submit" value="장바구니">
+            <br><br><br><br>
+            <div class="trade_status_selling">
+              <font size = "4" color = "white"><b>판매중</b></font>
+            </div>
+            <br>
+
+              <input type="checkbox" name="book" value="book3">
+              <input type="submit" id="submit" value="장바구니">
+
         </div>
 
 
 
-
-
+      </form>
       </div>
     </section>
   </body>
