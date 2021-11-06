@@ -9,12 +9,7 @@
     <link rel="stylesheet" href="register_signup.css">
     <script>
         function check(){
-            if(signup.name.value == ""){
-                alert("이름을 입력해주셔야합니다!");
-                signup.name.focus();
-                return false;
-            }
-            else if(signup.id.value == ""){
+            if(signup.id.value == ""){
                 alert("아이디를 입력해주셔야합니다!");
                 signup.id.focus();
                 return false;
@@ -24,18 +19,8 @@
                 signup.pw.focus();
                 return false;
             }
-            else if(signup.email.value == ""){
-                alert("이메일을 입력해주셔야합니다!");
-                signup.email.focus();
-                return false;
-            }
-            else if(signup.address.value == ""){
-                alert("주소를 입력해주셔야합니다!");
-                signup.address.focus();
-                return false;
-            }
             else {
-                alert("회원 가입 완료!");
+                alert("로그인에 성공하였습니다");
                 return true;
             }
         }
@@ -49,12 +34,9 @@
         <hr class="line"><br>
         <div class="mainfield">
             <div class="signup">
-                <font size="4px;">이름 </font> <br><input class="textbox" type="text" id="name"><br><br>
                 <font size="4px;">아이디 </font><br><input class="textbox" type="text" id="id"><br><br>
                 <font size="4px;">비밀번호 </font><br><input class="textbox" type="text" id="pw"><br><br>
-                <font size="4px;">이메일 </font><br><input class="textbox" type="text" id="email"><br><br>
-                <font size="4px;">주소 </font><br><input class="textbox" type="text" id="address"><br><br>
-                <input style="height: 45px;width: 100px;" type="submit" value="회원가입">
+                <input style="height: 45px;width: 100px;" type="submit" value="로그인">
             </div>
         </div>
         <hr class="line">  
