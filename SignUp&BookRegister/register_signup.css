@@ -1,6 +1,6 @@
 th,td{
     border: 1px solid #444444;
-    padding: 10px;
+    padding: 8px;
 }
 
 .header{
@@ -17,25 +17,24 @@ th,td{
 
 .mainfield{
     border: 1;
-    height: 800px;
+    height: 600px;
     margin:auto;
 }
 
 .mainfield .signup{
-width: 500px; height:400px;
+width: 400px; height:400px;
 font-weight: bold; margin:auto;
 }
 
 .mainfield .register{
-    width: 35%;
     font-weight: bold;
     margin:auto;
 }
 
 .tableform{
     border: 5px solid #444444;
-    border-collapse: collapse;
-    width:155%; margin: auto;
+    border-collapse: collapse; margin: auto;
+    width:50%;
 }
 
 .tableform t{
@@ -45,6 +44,7 @@ font-weight: bold; margin:auto;
 .tableform .t .tt{
     background-color: #92553a;
     color:white;
+
 }
 
 .line{
