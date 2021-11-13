@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+<style >
+
+  li{
+    list-style : none;
+  }
+  .box {
+    width : 1110px;
+    margin : 0 auto;
+
+  }
+  .clear {
+    clear : both;
+  }
+  .research{
+
+    padding: 50px 20px;
+  }
+  #content_box {
+    padding-top : 5px;
+    padding-bottom : 50px;
+  }
+  #content_box h2 {
+    float: left;
+    margin-left : 500px;
+    padding 100px;
+  }
+
+  .b_t{
+    font-weight : bold;
+    margin-top : 10px;
+    font-size : 17px;
+  }
+  .b_m{
+    font-weight : bold;
+    margin-top : 20px;
+  }
+  .b_m span{
+    color : #a26f59;
+  }
+  .b_a{
+    font-size : 15px;
+    margin-top : 20px;
+    line-height : 150%;
+  }
+  .b_r{
+    font-size : 12px;
+    margin-top : 25px;
+    line-height : 150%;
+  }
+  .b_r span{
+    color : #a26f59;
+  }
+  .b_s{
+    font-size : 12px;
+    margin-top : 25px;
+    line-height : 150%;
+  }
+  .book_image {
+    width : 300px;
+    height : 300px;
+    float : left;
+    margin-right : 10px;
+  }
+  .book_detail {
+    width : 600px;
+    height : 400px;
+    float : left;
+  }
+  .book_button{
+    width : 200px;
+    height : 300px;
+    float : left;
+
+  }
+  #main_menu {
+    border-top: solid 1px #614438;
+    border-bottom: solid 1px #614438;
+    padding: 5px 2px;
+  }
+  #main_menu li{
+    display : inline;
+    font size : 12px;
+    margin-left : 30px;
+  }
+  .trade_status_selling{
+
+    background-color: #614438;
+    border-radius: 20px;
+    text-align: center;
+    height: 40px;
+    width: 100px;
+    margin-left : 30px;
+    line-height: 40px;
+  }
+  .trade_status_trading{
+
+    background-color: #990099;
+    border-radius: 20px;
+    text-align: center;
+    height: 40px;
+    width: 100px;
+    margin-left : 30px;
+    line-height: 40px;
+  }
+
+  input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+
+  }
+  #submit{
+    height: 40px;
+    width: 100px;
+    font-size:16px;
+    background-color:#614438;
+    color : white;
+    border:none;
+    border-radius: 20px;
+    font-weight: bold;
+  }
+  a:link{
+    color : black;
+  }
+  a:visited{
+    color : blue;
+  }
+  a:hover{
+    color : red;
+  }
+  a:active{
+    color : green;
+  }
+
+
+</style>
+
+
+  </head>
+  <body>
+<div id="logo">
+  <div class="box">
+    <div id="logo_image"style="text-align:center;">
+      <img src="https://user-images.githubusercontent.com/77041622/139581896-51282106-e82a-4dd8-b8e1-f17502e4117b.PNG" >
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+<nav id = "main_menu">
+  <div class="box" style="text-align:center;">
+    <ul>
+      <li><a href="../mainpage/mainpage.html">메인 페이지</a></li>
+      <li><a href="../research_page/research_page.html">검색 페이지</a></li>
+      <li><a href="../mypage/mypage.html">마이 페이지</a></li>
+      <li><a href="../cart/cart.html">장바구니 페이지</a></li>
+      <li><a href="../SignUp&BookRegister/BookRegister.html">도서등록 페이지</a></li>
+      <li><a href="../SignUp&BookRegister/Signup.html">회원가입 페이지</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="research" style="text-align:center;">
+  <input type="text" name="" placeholder="책 이름 또는 저자를 입력하세요" style = "width:400px; height:30px;">
+  <button type="button" name="button">검색</button>
+</div>
+
+
+
+
+
+    <section id = "content_box">
+      <div class="box">
+        <h2>전체 상품</h2>
+        <div class="clear"></div>
+        <form action="../cart/cart.html">
+
+        <div class = "book_image">
+          <A href="book1_detailpage.html" target="blank"><img src="https://image.aladin.co.kr/product/27669/16/cover500/8962623811_1.jpg" width = "232px" height = "302px" style="vertical-align:middle;"></A>
+        </div>
+        <div class = "book_detail">
+          <br>
+          <A href="book1_detailpage.html" target="blank"><li class = "b_t"> [국내 도서] 빛의 양자 컴퓨터</li></A>
+          <li class = "b_a"> 후루사와 아키라(지은이), 채은미(옮긴이)</li>
+          <li class = "b_a"> 동아시아 | 2021년 8월 </li>
+          <li class = "b_m"> 15,000원 -> <span>13,500원</span> </li>
+          <li class = "b_r"> 평점 <span>4.5/5</span> </li>
+          <li class = "b_s"> 상태 : <font size = "3" color = "green"><b>상</b></font>
+        </div>
+        <div class="book_button">
+            <br><br><br><br>
+            <div class="trade_status_selling">
+              <font size = "4" color = "white"><b>판매중</b></font>
+            </div>
+            <br>
+
+              <input type="checkbox" name="book" value="book1">
+              <input type="submit" id="submit" value="장바구니">
+
+        </div>
+
+        <div class = "book_image">
+          <img src="https://image.aladin.co.kr/product/18392/80/cover500/8970509690_1.jpg" width = "232px" height = "302px" style="vertical-align:middle;">
+        </div>
+        <div class = "book_detail">
+          <li class = "b_t"> [국내 도서] 컴퓨터구조론</li>
+          <li class = "b_a"> 김종현(지은이)</li>
+          <li class = "b_a"> 생능 | 2019년 2월 </li>
+          <li class = "b_m"> 28,000원 -> <span>27,160원</span> </li>
+          <li class = "b_r"> 평점 <span>4.1/5</span> </li>
+          <li class = "b_s"> 상태 : <font size = "3" color = "orange"><b>중</b></font>
+        </div>
+        <div class="book_button">
+            <br><br><br><br>
+            <div class="trade_status_trading">
+              <font size = "4" color = "white"><b>거래중</b></font>
+            </div>
+            <br>
+
+              <input type="checkbox" name="book" value="book2">
+              <input type="submit" id="submit" value="장바구니">
+
+        </div>
+
+        <div class = "book_image">
+          <img src="https://image.aladin.co.kr/product/26844/45/cover500/k942730395_1.jpg" width = "232px" height = "302px" style="vertical-align:middle;">
+        </div>
+        <div class = "book_detail">
+          <li class = "b_t"> [국내 도서] 한 권으로 읽는 컴퓨터 구조와 프로그래밍</li>
+          <li class = "b_a"> 조너선 스타인하트(지은이), 오현석(옮긴이)</li>
+          <li class = "b_a"> 책만 | 2021년 4월 </li>
+          <li class = "b_m"> 35,000원 -> <span>31,500원</span> </li>
+          <li class = "b_r"> 평점 <span>3.5/5</span> </li>
+          <li class = "b_s"> 상태 : <font size = "3" color = "red"><b>하</b></font>
+        </div>
+        <div class="book_button">
+            <br><br><br><br>
+            <div class="trade_status_selling">
+              <font size = "4" color = "white"><b>판매중</b></font>
+            </div>
+            <br>
+
+              <input type="checkbox" name="book" value="book3">
+              <input type="submit" id="submit" value="장바구니">
+
+        </div>
+
+
+
+      </form>
+      </div>
+    </section>
+  </body>
+</html>
