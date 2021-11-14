@@ -21,7 +21,7 @@
 -->
 
 <body>
-    <link rel="stylesheet" href="./cart.css">
+    <link rel="stylesheet" href="./css/cart.css">
 
     <div id="all-div">
         <center>
@@ -29,7 +29,7 @@
         <div class="search" style="position: relative; top: 15px;">
             <i class="fas fa-search"></i>
             <input type="text" placeholder="책 이름 또는 저자를 입력하세요." style="width:400px; height:30px;">
-            <button id="search" onclick="location.href='../research_page/research_page.html'">검색</button>
+            <button id="search" onclick="location.href='research_page.html'">검색</button>
         </div>
     </center>
         <br><br><br>
@@ -49,7 +49,7 @@
             </thead>
             <tbody id="cart-table-body">
                 <tr>
-                    <td><img class="book-image" src="./book_image.png" alt="book_image"></td>
+                    <td><img class="book-image" src="./img/book_image.png" alt="book_image"></td>
                     <td class="book-title"><a href="book_link"">클린 코드 Clean Code - 애자일 소프트웨어 장인 정신</a></td>
                     <td class="book-price">15,000원</td>
                     <td class="book-quality">중</td>
@@ -57,7 +57,7 @@
                     <td><button class="delete-button">삭제</button></td>
                 </tr>
                 <tr>
-                    <td><img class="book-image" src="./book_image.png" alt="book_image"></td>
+                    <td><img class="book-image" src="./img/book_image.png" alt="book_image"></td>
                     <td class="book-title"><a href="book_link">가상 면접 사례로 배우는 대규모 시스템 설계 기초</a></td>
                     <td class="book-price">25,000원</td>
                     <td class="book-quality">최상</td>
@@ -65,7 +65,7 @@
                     <td><button class="delete-button">삭제</button></td>
                 </tr>
                 <tr>
-                    <td><img class="book-image" src="./book_image.png" alt="book_image"></td>
+                    <td><img class="book-image" src="./img/book_image.png" alt="book_image"></td>
                     <td class="book-title"><a href="book_link">이것이 취업을 위한 코딩 테스트다 with 파이썬</a></td>
                     <td class="book-price">10,000원</td>
                     <td class="book-quality">하</td>
@@ -83,7 +83,7 @@
             <button class="buy-button" onClick="location.href='./order'">구매하기</button>
         </div>
     </div>
-    <script src="cart.js"></script>
+    <script src="./js/cart.js"></script>
 </body>
 </html>
 
