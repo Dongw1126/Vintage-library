@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<head>
+    <title>BookRegister</title>
+    <link rel="stylesheet" href="css/register_signup.css">
+    <script>
+        function check(){
+            var fileCheck = document.getElementById("chooseFile").value
+            if(register.bookname.value == ""){
+                alert("도서 이름을 입력하지 않았습니다!");
+                register.bookname.focus();
+                return false;
+            }
+            else if(register.author.value == ""){
+                alert("저자를 입력하지 않았습니다!");
+                register.author.focus();
+                return false;
+            }
+            else if(register.publisher.value == ""){
+                alert("출판사를 입력하지 않았습니다!");
+                register.publisher.focus();
+                return false;
+            }
+            else if(register.quality.value == ""){
+                alert("품질을 입력하지 않았습니다!");
+                return false;
+            }
+            else if(register.bookcost.value == ""){
+                alert("희망가격을 입력하지 않았습니다!");
+                register.bookcost.focus();
+                return false;
+            }
+            else if(register.account.value == ""){
+                alert("계좌번호를 입력하지 않았습니다!");
+                register.account.focus();
+                return false;
+            }
+            else if(!fileCheck){
+                alert("도서 사진파일을 첨부해주세요!");
+                return false;
+            }
+            else {
+                alert("도서 등록 완료!");
+                return true;
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <form name= "register" action = "../mainpage/mainpage.html" method= "post" onsubmit="return check()">
+        <a href="register" class="header" ><img style="margin:auto;"src="https://user-images.githubusercontent.com/77041622/139581896-51282106-e82a-4dd8-b8e1-f17502e4117b.PNG" ></img></a><br>
+        <h1 class="headerTitle"><center>도서 등록</center></h1>
+        <hr class="line"><br>
+        <div class="mainfield">
+            <div class="register">
+                <table class="tableform">
+                    <tr class=t>
+                        <th class=tt>도서 이름 </th> 
+                        <td><input class="textbox2" type="text" id="bookname"></td>
+                    </tr>
+
+                    <tr class=t>
+                        <th class=tt>저자</th>
+                        <td><input class="textbox2" type="text" id="author"></td>
+                    </tr>
+
+                    <tr class=t>
+                        <th class=tt>출판사</th>
+                        <td><input class="textbox2" type="text" id="publisher"></td>
+                    </tr>
+
+                    <tr class=t>
+                        <th class=tt>도서 품질</th>
+                        <td>
+                        <input type="radio" id="quality">최상
+                        <input type="radio" id="quality">상
+                        <input type="radio" id="quality">중
+                        <input type="radio" id="quality">하
+                        </td>
+                    </tr>
+
+                    <tr class=t>
+                        <th class=tt>도서 분류</th>
+                        <td>
+                        <select class="selectbox" id="booktype">
+                            <option value="novel">소설</option>
+                            <option value="textbook">교재</option>
+                            <option value="magazine">잡지</option>
+                            <option value="comic">만화</option>
+                        </select>
+                        </td>
+                    </tr>
+
+                    <tr class=t>
+                        <th class=tt>희망 가격</th>
+                        <td class=ttt><input class="textbox2" type="text" id="bookcost"></td>
+                    </tr>
+
+                    <tr class=t>
+                        <th class=tt>계좌 번호</th>
+                        <td>
+                        <select class="selectbox" id="bank_name">
+                            <option value="shinhan">신한</option>
+                            <option value="KB">KB국민</option>
+                            <option value="uri">우리</option>
+                            <option value="hana">하나</option>
+                        </select>
+                        <input  class="textbox2" type="text" id="account">
+                        </td>
+                    </tr>
+
+                    <tr class=t>
+                        <th class=tt>도서의 상태 이미지 등록</th>
+                        <td class=ttt><input type="file" multiple="multiple" id="chooseFile" accept="image/*" onchange="loadFile(this)"></td>
+                    </tr>
+                </table>
+                <div style="text-align: center; margin-top: 3%;">
+                    <input type="submit" style="height: 45px;width: 100px;"  value="도서 등록">
+                </div>
+            </div>
+            
+
+        </div>
+        <hr class="line"><br>
+    </form>
+        
+
+</body>
+
+</html>
+    

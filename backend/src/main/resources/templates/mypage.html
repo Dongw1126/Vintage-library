@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MyPage</title>
+    <link rel="stylesheet" href="css/mypage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="MyPageBody">
+    <div class="wrap">
+        <div class="MyInfoContainer">
+            <div>
+                <div class="Nav">
+                    <a href="/">
+                        <i class="fas fa-home" style="color: white;"></i>
+                    </a>
+                    <a href="cart">
+                        <i class="fas fa-shopping-cart" style="color: white; margin-left: 20px;"></i>
+                    </a>
+                </div>
+                <div class="name"><span th:text="${session.user.userId}"></span> 님</div>
+                <div class="nickname"><span th:text="${session.user.email}"></span> </div>
+            </div>
+        </div>
+        <div class="StatusContainer">
+            <div class="title">
+                구매/판매 현황
+            </div>
+            <div class="status">
+                <div class="item">
+                    <div>
+                        <div class="number">6</div>
+                        <div class="text">장바구니</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <div class="number">1</div>
+                        <div class="text">구매진행중</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <div class="number">3</div>
+                        <div class="text">구매완료</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <div class="number">2</div>
+                        <div class="text">판매중</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <div class="number">1</div>
+                        <div class="text">판매완료</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="listContainer">
+            <div class="header">
+                <div class="headerTitle">주문목록</div>
+            </div>
+            <hr>
+            <div class="book">
+                <div>
+                    <img src="images/clean.png"/>
+                </div>
+                <div>
+                    <span class="title">Clean Code 클린 코드</span><br>
+                    <span class="author">로버트 C. 마틴</span><br><br>
+                    <span class="user">판매자: slavapestov</span><br>
+                    <span class="status">구매 진행중</span><br>
+                </div>
+            </div>
+            <hr>
+            <div class="book">
+                <div>
+                    <img src="images/cosmos.png"/>
+                </div>
+                <div>
+                    <span class="title">코스모스</span><br>
+                    <span class="author">칼세이건</span><br><br>
+                    <span class="user">판매자: gribozavr</span><br>
+                    <span class="status">구매 완료</span><br>
+                </div>
+            </div>
+            <hr>
+            <div class="book">
+                <div>
+                    <img src="images/modern.png"/>
+                </div>
+                <div>
+                    <span class="title">모던 자바스크립트 Deep Dive</span><br>
+                    <span class="author">이웅모</span><br><br>
+                    <span class="user">판매자: franklinsch</span><br>
+                    <span class="status">구매 완료</span><br>
+                </div>
+            </div>
+            <hr>
+            <div class="book">
+                <div>
+                    <img src="images/voca.png"/>
+                </div>
+                <div>
+                    <span class="title">해커스 토익 기출 보카</span><br>
+                    <span class="author">데이비드 조</span><br><br>
+                    <span class="user">판매자: Kyle-Ye</span><br>
+                    <span class="status">구매 완료</span><br>
+                </div>
+            </div>
+        </div>
+        <div class="listContainer">
+            <div class="header">
+                <div class="headerTitle">구매목록</div>
+            </div>
+            <hr>
+            <div class="book">
+                <div>
+                    <img src="images/brain.png"/>
+                </div>
+                <div>
+                    <span class="title">이토록 뜻밖의 뇌과학</span><br>
+                    <span class="author">리사 펠드먼 배럿</span><br><br>
+                    <span class="user">구매자: 미정</span><br>
+                    <span class="status">판매중</span><br>
+                </div>
+            </div>
+            <hr>
+            <div class="book">
+                <div>
+                    <img src="images/art.png"/>
+                </div>
+                <div>
+                    <span class="title">방구석 미술관</span><br>
+                    <span class="author">조원재</span><br><br>
+                    <span class="user">구매자: 미정</span><br>
+                    <span class="status">판매중</span><br>
+                </div>
+            </div>
+            <hr>
+            <div class="book">
+                <div>
+                    <img src="images/gene.png"/>
+                </div>
+                <div>
+                    <span class="title">이기적 유전자</span><br>
+                    <span class="author">리처드 도킨스</span><br><br>
+                    <span class="user">구매자: dduan</span><br>
+                    <span class="status">판매완료</span><br>
+                </div>
+            </div>
+        </div>
+        <div class="footerContainer">
+            <a href="logout" class="item">
+                <div>로그아웃</div>
+            </a>
+            <a href="/" class="item">
+                <div>메인페이지</div>
+            </a>
+            <a href="cart" class="item">
+                <div>장바구니</div>
+            </a>
+        </div>
+    </div>
+</body>

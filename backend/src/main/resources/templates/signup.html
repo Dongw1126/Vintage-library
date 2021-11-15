@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<head>
+    <title>SignUp</title>
+    <link rel="stylesheet" href="css/register_signup.css">
+    <script>
+        function check(){
+            if(signup.name.value == ""){
+                alert("이름을 입력해주셔야합니다!");
+                signup.name.focus();
+                return false;
+            }
+            else if(signup.id.value == ""){
+                alert("아이디를 입력해주셔야합니다!");
+                signup.id.focus();
+                return false;
+            }
+            else if(signup.pw.value == ""){
+                alert("비밀번호를 입력해주셔야합니다!");
+                signup.pw.focus();
+                return false;
+            }
+            else if(signup.email.value == ""){
+                alert("이메일을 입력해주셔야합니다!");
+                signup.email.focus();
+                return false;
+            }
+            else if(signup.address.value == ""){
+                alert("주소를 입력해주셔야합니다!");
+                signup.address.focus();
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+
+    </script>
+    <style>
+        body {
+            background-color: #F3F0D7;
+        }
+    </style>
+</head>
+<body>
+    <form name="signup" action="signup" method="post" id="loginForm" onsubmit="return check()">
+        <h2>SignUp!</h2>
+        <div class="infForm">
+            <input type="text" id="name" name="name" class = "inf" placeholder="Name">
+        </div>
+        <div id="idForm">
+          <input type="text" id="id" name="id" placeholder="ID">
+        </div>
+        <div id="passForm">
+          <input type="password" id="pw" name="pw" placeholder="PW">
+        </div>
+        <div class="infForm">
+            <input type="text" id="email" name="email" class = "inf" placeholder="Email">
+        </div>  
+        <div class="infForm">
+            <input type="text" id="address" name="address" class = "inf" placeholder="Address">
+        </div>
+        <input value="회원가입" type="submit" id="btn">
+            
+    </form>
+
+</body>
+</html>

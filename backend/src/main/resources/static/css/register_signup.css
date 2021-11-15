@@ -1,0 +1,157 @@
+th,td{
+    border: 1px solid #444444;
+    padding: 8px;
+}
+
+.header{
+    height: 150px;display: flex;padding: 16px;
+    background-color:#614438;
+    color:white; text-align: center;
+    margin: auto;
+}
+
+.headerTitle{
+    background-color:#614438;
+    color:white;
+}
+
+.mainfield{
+    border: 1;
+    height: 600px;
+    margin:auto;
+}
+
+.mainfield .signup{
+width: 400px; height:400px;
+font-weight: bold; margin:auto;
+} 
+
+.mainfield .register{
+    font-weight: bold;
+    margin:auto;
+}
+
+.tableform{
+    border: 5px solid #444444;
+    border-collapse: collapse; margin: auto;
+    width:50%;
+} /*table 조정*/
+
+.tableform t{
+    border: 1px solid #444444;
+}/*table tr 조정*/
+
+.tableform .t .tt{
+    background-color: #92553a;
+    color:white;
+
+}/*table th조정*/
+
+.line{
+border:none; border:5px double #614438;
+
+}
+
+.textbox{
+height: 35px; width: 300px;
+}
+
+.textbox2{
+    height: 25px; width: 300px;
+}
+
+.selectbox{
+    height: 30px; width: 50px;
+}
+
+
+  
+  #loginForm {
+    position:absolute;
+    width:300px;
+    height:550px;
+    padding: 30px, 20px;
+    background-color:#FFFFFF;
+    text-align:center;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border-radius: 15px;
+  }
+  
+  #loginForm h2{
+    text-align: center;
+    margin: 30px;
+  }
+  
+  #idForm{
+    border-bottom: 2px solid #adadad;
+    margin: 30px;
+    padding: 10px 10px;
+  }
+  
+  #passForm{
+    border-bottom: 2px solid #adadad;
+    margin: 30px;
+    padding: 10px 10px;
+  }
+
+  .infForm{
+    border-bottom: 2px solid #adadad;
+    margin: 30px;
+    padding: 10px 10px;
+  }
+  
+  #id {
+    width: 100%;
+    border:none;
+    outline:none;
+    color: #636e72;
+    font-size:16px;
+    height:25px;
+    background: none;
+  }
+  
+  #pw {
+    width: 100%;
+    border:none;
+    outline:none;
+    color: #636e72;
+    font-size:16px;
+    height:25px;
+    background: none;
+  }
+
+  .inf{
+    width: 100%;
+    border:none;
+    outline:none;
+    color: #636e72;
+    font-size:16px;
+    height:25px;
+    background: none;
+  }
+  
+  #btn {
+    position:relative;
+    left:40%;
+    transform: translateX(-50%);
+    margin-bottom: 40px;
+    width:80%;
+    height:40px;
+    background: #C36A2D;
+    background-position: left;
+    background-size: 200%;
+    color:white;
+    font-weight: bold;
+    border:none;
+    cursor:pointer;
+  }
+  
+  #btn:hover {
+    background-position: right;
+  }
+  
+  #bottomText {
+    text-align: center;
+  }
