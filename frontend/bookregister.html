@@ -5,7 +5,7 @@
 
 <head>
     <title>BookRegister</title>
-    <link rel="stylesheet" href="register_signup.css">
+    <link rel="stylesheet" href="./css/register_signup.css">
     <script>
         function check(){
             var fileCheck = document.getElementById("chooseFile").value
@@ -52,10 +52,10 @@
 </head>
 
 <body>
-    <form name= "register" action = "../mainpage/mainpage.html" method= "post" onsubmit="return check()">
-        <a href="../mainpage/mainpage.html" class="header" ><img style="margin:auto;"src="https://user-images.githubusercontent.com/77041622/139581896-51282106-e82a-4dd8-b8e1-f17502e4117b.PNG" ></img></a><br>
-        <h1 class="headerTitle"><center>도서 등록</center></h1>
-        <hr class="line"><br>
+    <div class="header-container">
+        도서 등록
+    </div>
+    <form name= "register" action = "mainpage.html" method= "post" onsubmit="return check()">
         <div class="mainfield">
             <div class="register">
                 <table class="tableform">
@@ -123,14 +123,8 @@
                     <input type="submit" style="height: 45px;width: 100px;"  value="도서 등록">
                 </div>
             </div>
-            
-
         </div>
-        <hr class="line"><br>
-    </form>
-        
-
+    </form>      
 </body>
-
 </html>
     

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Vintage Library</title>
+    <meta charset="utf-8">
+    <meta name="view" content="width=device-width">
+    <script src="https://kit.fontawesome.com/8eb5905426.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Malgun Gothic';
+        }
+
+        #login {
+            float: right;
+        }
+
+        #mypage {
+            float: right;
+        }
+
+        #btn_group {
+            display: flow-root;
+            height: auto;
+        }
+
+        #btn_group button {
+            border: 1.5px solid #C36A2D;
+            background-color: rgba(0, 0, 0, 0);
+            padding: 5px;
+        }
+
+        #btn_group button:hover {
+            color: white;
+            background-color: #C36A2D;
+        }
+
+        #searchbox {
+            display: inline-block;
+            margin: 1px;
+            padding: 8px;
+            height: 30px;
+            width: 430px;
+            background-color: #fff;
+            border: 2px solid #5f361b;
+            border-radius: 30px;
+        }
+
+        #search-txt {
+            padding: 0;
+            width: 240px;
+            border: none;
+            outline: none;
+            float: left;
+            font-size: 1rem;
+            line-height: 30px;
+        }
+
+        #search-btn {
+            text-decoration: none;
+            width: 30px;
+            height: 30px;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #C36A2D;
+        }
+        .logo {
+            width: 400px;
+            height: auto;
+        }
+        .content {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="btn_group">
+        <button id="mypage" onClick="location.href='mypage.html'"><b>마이페이지</b></button>
+        <button id="login" onClick="location.href='login.html'"><b>로그인</b></button>
+    </div>
+    <div class="content">
+        <a href="./mainpage.html">
+            <img class="logo" src="./img//Vintage Library-logo.png">
+          </a> 
+        <br>
+        <div id="searchbox">
+            <input type="text" id="search-txt" placeholder="책 이름 또는 저자를 입력하세요." style="width:400px; height:30px;">
+            <a id="search-btn" href="research_page.html">
+                <i class="fas fa-search"></i>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>

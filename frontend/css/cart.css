@@ -92,10 +92,15 @@ tr:last-child{
 }
 
 #first-row{
-
-    background-color: #F8F0DF;
+    background-color: #614438;
+    color: white;
 }
 
 .hidden{
     display: none;
+}
+
+.logo {
+    width: 400px;
+    height: auto;
 }
