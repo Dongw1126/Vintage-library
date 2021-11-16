@@ -48,7 +48,7 @@ class HomeController(val userService: UserService) {
 
     @GetMapping("/detail")
     fun detail() : String{
-        return "book1_detailpage"
+        return "detailpage"
     }
 
 

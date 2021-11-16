@@ -19,6 +19,10 @@
             float: right;
         }
 
+        #logout {
+            float: right;
+        }
+
         #btn_group {
             display: flow-root;
             height: auto;
@@ -78,17 +82,18 @@
 
 <body>
     <div id="btn_group">
-        <button id="mypage" onClick="location.href='mypage.html'"><b>마이페이지</b></button>
-        <button id="login" onClick="location.href='login.html'"><b>로그인</b></button>
+        <button th:if="${session.user != null}" id="mypage" onClick="location.href='mypage'"><b>마이페이지</b></button>
+        <button th:if="${session.user != null}" id="logout" onClick="location.href='logout'"><b>로그아웃</b></button>
+        <button th:if="${session.user == null}" id="login" onClick="location.href='login'"><b>로그인</b></button>
     </div>
     <div class="content">
-        <a href="./mainpage.html">
+        <a href="/">
             <img class="logo" src="/img/Vintage Library-logo.png">
           </a> 
         <br>
         <div id="searchbox">
             <input type="text" id="search-txt" placeholder="책 이름 또는 저자를 입력하세요." style="width:400px; height:30px;">
-            <a id="search-btn" href="research_page.html">
+            <a id="search-btn" href="research">
                 <i class="fas fa-search"></i>
             </a>
         </div>
