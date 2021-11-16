@@ -22,8 +22,8 @@ th,td{
 }
 
 .mainfield .signup{
-width: 400px; height:400px;
-font-weight: bold; margin:auto;
+  width: 400px; height:400px;
+  font-weight: bold; margin:auto;
 } 
 
 .mainfield .register{
@@ -154,4 +154,15 @@ height: 35px; width: 300px;
   
   #bottomText {
     text-align: center;
+  }
+
+  .header-container{  
+    height: auto;
+    font-size: 40px;
+    color: #ffffff;
+    background-color: #614438;
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+    margin-bottom: 50px;
   }
