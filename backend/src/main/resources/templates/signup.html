@@ -6,7 +6,7 @@
 
 <head>
     <title>SignUp</title>
-    <link rel="stylesheet" href="css/register_signup.css">
+    <link rel="stylesheet" href="/css/register_signup.css">
     <script>
         function check(){
             if(signup.name.value == ""){
@@ -35,6 +35,7 @@
                 return false;
             }
             else {
+                alert("회원 가입 완료!");
                 return true;
             }
         }
@@ -53,19 +54,19 @@
             <input type="text" id="name" name="name" class = "inf" placeholder="Name">
         </div>
         <div id="idForm">
-          <input type="text" id="id" name="id" placeholder="ID">
+            <input type="text" id="id" name="id" placeholder="ID">
         </div>
         <div id="passForm">
-          <input type="password" id="pw" name="pw" placeholder="PW">
+            <input type="password" id="pw" name="pw" placeholder="PW">
         </div>
         <div class="infForm">
             <input type="text" id="email" name="email" class = "inf" placeholder="Email">
-        </div>  
+        </div>
         <div class="infForm">
             <input type="text" id="address" name="address" class = "inf" placeholder="Address">
         </div>
         <input value="회원가입" type="submit" id="btn">
-            
+
     </form>
 
 </body>

@@ -28,6 +28,8 @@ class SignupController(val userService: UserService) {
             val email = req.getParameter("email")
             val address = req.getParameter("address")
 
+            println(id);
+
             val overlap = userService.findByUserId(id) // 이미 해당 id 가진 사람이 존재할 시
 
             if(overlap != null){ // 재시도 요청
