@@ -41,6 +41,11 @@ class HomeController(val userService: UserService) {
         return "bookregister"
     }
 
+    @GetMapping("/search")
+    fun book_search() : String{
+        return "booksearch"
+    }
+
     @GetMapping("/cart")
     fun cart() : String{
         return "cart"
