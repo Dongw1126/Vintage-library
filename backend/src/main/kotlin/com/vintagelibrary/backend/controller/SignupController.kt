@@ -7,13 +7,22 @@ import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.ResponseBody
+import java.io.PrintWriter
 import javax.servlet.http.HttpServletRequest
+import javax.servlet.http.HttpServletResponse
+import javax.servlet.http.HttpSession
 
 @Controller
 class SignupController(val userService: UserService) {
 
     @GetMapping("/signup")
-    fun signup_form() : String{
+    fun signup_form(session : HttpSession, response : HttpServletResponse, req : HttpServletRequest) : String{
+        if(session.getAttribute("user") != null){ // 로그인 상태인데 회원가입하려 할 시
+            response.setContentType("text/html; charset=UTF-8");
+            val out : PrintWriter = response.getWriter();
+            out.println("<script>" + "alert(\"이미 회원입니다!\");" + "location.href=\"/\";" + "</script>");
+            out.flush();
+        }
         return "signup"
     }
 

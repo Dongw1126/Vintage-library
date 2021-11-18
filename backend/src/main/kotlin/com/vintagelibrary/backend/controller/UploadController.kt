@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest
 
 @CrossOrigin
 @RestController
-class PostController(val postService: PostService) {
+class UploadController(val postService: PostService) {
     @PostMapping("/upload")
     // bookname author publisher
     fun upload(req: HttpServletRequest, @RequestParam("image") multipartFile: MultipartFile) : String{
@@ -23,14 +23,12 @@ class PostController(val postService: PostService) {
         val author = req.getParameter("author")
         val publisher = req.getParameter("publisher")
         var imageName: String = StringUtils.cleanPath(multipartFile.originalFilename.toString())
-/*        user.setPhotos(fileName)
-        val savedUser: User = repo.save(user)*/
-        val uploadDir = "image-upload/"
+
+        val uploadDir = "image-upload/" // 업로드된 이미지 폴더
         imageName = (1+postService.count()).toString() + "_" + imageName
-        //imageName = postService.count().toString()
+        //imageName = bookId_원래이름
         postService.imageUpload(uploadDir, imageName, multipartFile)
         postService.save(Book(bookName, author, publisher, imageName))
-        //return RedirectView("/users", true)
-        return "<script>" + "alert(\"책 등록 성공!\");" + "location.href='/';" + "</script>";
+        return "<script>" + "location.href='/';" + "</script>";
     }
 }
