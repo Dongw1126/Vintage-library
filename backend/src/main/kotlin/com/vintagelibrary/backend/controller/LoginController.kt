@@ -6,6 +6,7 @@ import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestParam
+import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 import javax.servlet.http.HttpSession
 
@@ -20,7 +21,7 @@ class LoginController(val userService: UserService) {
     @PostMapping("/login")
     fun login(model : Model,
               @RequestParam("id") id : String,
-              @RequestParam("pw") pw : String, session: HttpSession) : String{
+              @RequestParam("pw") pw : String, session: HttpSession, req : HttpServletRequest) : String{
         val found = userService.findByUserId(id) // userId로 db 검색
         if(found == null){
             println("아예 없다")
@@ -34,6 +35,7 @@ class LoginController(val userService: UserService) {
                 println("아이디는 맞았다")
             }
         }
+        println("이전 URL : " + req.getHeader("referer"))
         return "redirect:/"
     }
 

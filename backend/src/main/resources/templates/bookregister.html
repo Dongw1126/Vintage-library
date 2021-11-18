@@ -55,24 +55,24 @@
     <div class="header-container">
         도서 등록
     </div>
-    <form name= "register" action="register" method="post" onsubmit="return check()">
+    <form name= "register" enctype="multipart/form-data" action="upload" method="post" onsubmit="return check()">
         <div class="mainfield">
             <div class="register">
                 <table class="tableform">
                     <tr class=t>
                         <th class=tt>도서 이름 </th>
-                        <td><input class="textbox2" type="text" id="bookname"></td>
+                        <td><input class="textbox2" type="text" id="bookname" name="bookname"></td>
                         <td><button id="openChild" type="button">검색</button></td>
                     </tr>
 
                     <tr class=t>
                         <th class=tt>저자</th>
-                        <td><input class="textbox2" type="text" id="author"></td>
+                        <td><input class="textbox2" type="text" name="author" id="author"></td>
                     </tr>
 
                     <tr class=t>
                         <th class=tt>출판사</th>
-                        <td><input class="textbox2" type="text" id="publisher"></td>
+                        <td><input class="textbox2" type="text" name="publisher" id="publisher"></td>
                     </tr>
 
                     <tr class=t>
@@ -117,7 +117,9 @@
 
                     <tr class=t>
                         <th class=tt>도서의 상태 이미지 등록</th>
-                        <td class=ttt><input type="file" multiple="multiple" id="chooseFile" accept="image/*" onchange="loadFile(this)"></td>
+                        <td class=ttt>
+                            <input type="file" name="image" multiple="multiple" id="chooseFile" accept="image/*">
+                        </td>
                     </tr>
                 </table>
                 <div style="text-align: center; margin-top: 3%;">
