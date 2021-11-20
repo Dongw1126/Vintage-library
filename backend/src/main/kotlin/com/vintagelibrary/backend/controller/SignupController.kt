@@ -36,6 +36,7 @@ class SignupController(val userService: UserService) {
             val pw = req.getParameter("pw")
             val email = req.getParameter("email")
             val address = req.getParameter("address")
+            val account = req.getParameter("account")
 
             println(id);
 
@@ -46,7 +47,7 @@ class SignupController(val userService: UserService) {
             }
 
             // 없을 시 입력받은 정보로 db에 새로운 User 저장
-            userService.save(User(name,id,pw,email,address))
+            userService.save(User(name,id,pw,email,address,account))
         }catch (e:Exception){
             e.printStackTrace()
         }
