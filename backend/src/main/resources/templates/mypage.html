@@ -11,7 +11,7 @@
 <body class="MyPageBody">
     <div class="wrap">
         <div class="MyInfoContainer">
-            <div>
+            <div th:if = "${session.user != null}"}>
                 <div class="Nav">
                     <a href="/">
                         <i class="fas fa-home" style="color: white;"></i>
