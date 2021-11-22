@@ -34,6 +34,11 @@
                 signup.address.focus();
                 return false;
             }
+            else if(signup.account.value == ""){
+                alert("계좌번호를 입력해주셔야합니다!");
+                signup.account.focus();
+                return false;
+            }
             else {
                 alert("회원 가입 완료!");
                 return true;
@@ -64,6 +69,9 @@
         </div>
         <div class="infForm">
             <input type="text" id="address" name="address" class = "inf" placeholder="Address">
+        </div>
+        <div class="infForm">
+            <input type="text" id="account" name="account" class = "inf" placeholder="Account">
         </div>
         <input value="회원가입" type="submit" id="btn">
 

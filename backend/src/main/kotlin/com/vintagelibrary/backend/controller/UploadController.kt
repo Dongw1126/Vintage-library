@@ -22,13 +22,14 @@ class UploadController(val postService: PostService) {
         val bookName = req.getParameter("bookname")
         val author = req.getParameter("author")
         val publisher = req.getParameter("publisher")
+        val comment = req.getParameter("comment")
         var imageName: String = StringUtils.cleanPath(multipartFile.originalFilename.toString())
 
         val uploadDir = "image-upload/" // 업로드된 이미지 폴더
         imageName = (1+postService.count()).toString() + "_" + imageName
         //imageName = bookId_원래이름
         postService.imageUpload(uploadDir, imageName, multipartFile)
-        postService.save(Book(bookName, author, publisher, imageName))
+        postService.save(Book(bookName, author, publisher, comment, imageName))
         return "<script>" + "location.href='/';" + "</script>";
     }
 }

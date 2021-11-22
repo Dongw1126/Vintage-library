@@ -33,11 +33,6 @@
                 register.bookcost.focus();
                 return false;
             }
-            else if(register.account.value == ""){
-                alert("계좌번호를 입력하지 않았습니다!");
-                register.account.focus();
-                return false;
-            }
             else if(!fileCheck){
                 alert("도서 사진파일을 첨부해주세요!");
                 return false;
@@ -103,16 +98,8 @@
                     </tr>
 
                     <tr class=t>
-                        <th class=tt>계좌 번호</th>
-                        <td>
-                        <select class="selectbox" id="bank_name">
-                            <option value="shinhan">신한</option>
-                            <option value="KB">KB국민</option>
-                            <option value="uri">우리</option>
-                            <option value="hana">하나</option>
-                        </select>
-                        <input  class="textbox2" type="text" id="account">
-                        </td>
+                        <th class=tt>도서 설명</th>
+                        <td><input class="textbox2" type="textarea" name="comment" id="comment"></td>
                     </tr>
 
                     <tr class=t>

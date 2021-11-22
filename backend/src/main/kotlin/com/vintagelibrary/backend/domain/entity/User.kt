@@ -8,7 +8,7 @@ import javax.persistence.*
 @Getter
 @Setter
 @NoArgsConstructor
-class User(name : String, userId : String, password: String, email : String, address : String){
+class User(name : String, userId : String, password: String, email : String, address : String, account : String){
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     var id:Long?=null // 각 객체마다 고유한 id
@@ -17,5 +17,5 @@ class User(name : String, userId : String, password: String, email : String, add
     var password:String = password
     var email:String = email
     var address:String = address
-    // name id pw email address
+    var account:String = account // 계좌 입력
 }
