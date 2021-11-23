@@ -37,4 +37,4 @@ out/
 .vscode/
 
 # book image
-/image-upload/
+src/main/resources/static/image-upload/

@@ -19,17 +19,29 @@ class UploadController(val postService: PostService) {
     // bookname author publisher
     fun upload(req: HttpServletRequest, @RequestParam("image") multipartFile: MultipartFile) : String{
 
+
+        /*
+        * class Book(bookname : String, author : String,
+           publisher : String, quality : String,
+           booktype: String, price : Long,
+           comm : String, imageName : String)
+        *
+        * */
+
         val bookName = req.getParameter("bookname")
         val author = req.getParameter("author")
         val publisher = req.getParameter("publisher")
+        val quality = req.getParameter("quality")
+        val booktype = req.getParameter("booktype")
+        val price = req.getParameter("price")
         val comment = req.getParameter("comment")
         var imageName: String = StringUtils.cleanPath(multipartFile.originalFilename.toString())
 
-        val uploadDir = "image-upload/" // 업로드된 이미지 폴더
+        val uploadDir = "src/main/resources/static/image-upload/" // 업로드된 이미지 폴더
         imageName = (1+postService.count()).toString() + "_" + imageName
         //imageName = bookId_원래이름
         postService.imageUpload(uploadDir, imageName, multipartFile)
-        postService.save(Book(bookName, author, publisher, comment, imageName))
+        postService.save(Book(bookName, author, publisher, quality, booktype, price, comment, imageName))
         return "<script>" + "location.href='/';" + "</script>";
     }
 }

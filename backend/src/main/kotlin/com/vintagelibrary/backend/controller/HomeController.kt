@@ -3,6 +3,7 @@ package com.vintagelibrary.backend.controller
 import com.vintagelibrary.backend.domain.entity.Book
 import com.vintagelibrary.backend.domain.entity.User
 import com.vintagelibrary.backend.domain.repository.UserRepository
+import com.vintagelibrary.backend.service.BookService
 import com.vintagelibrary.backend.service.UserService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Controller
@@ -16,10 +17,15 @@ import javax.servlet.http.HttpServletResponse
 import javax.servlet.http.HttpSession
 
 @Controller
-class HomeController(val userService: UserService) {
+class HomeController(val userService: UserService, val bookService: BookService) {
 
     @GetMapping("/")
     fun index(req : HttpServletRequest) : String{
+        return "mainpage"
+    }
+
+    @GetMapping("/main")
+    fun main(req : HttpServletRequest) : String{
         return "mainpage"
     }
 
@@ -27,11 +33,6 @@ class HomeController(val userService: UserService) {
     fun mypage(session: HttpSession, response: HttpServletResponse) : String{
         checkLogin(session, response)
         return "mypage"
-    }
-
-    @GetMapping("/research")
-    fun research() : String{
-        return "research_page"
     }
 
     @GetMapping("/register")
