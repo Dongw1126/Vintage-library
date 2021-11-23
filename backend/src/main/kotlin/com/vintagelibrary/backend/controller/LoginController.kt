@@ -49,7 +49,11 @@ class LoginController(val userService: UserService) {
             redirectURI = "/"
         else{
             redirectURI = req.session.getAttribute("redirectURI") //
+            if(redirectURI == "http://localhost:8080/signup") // 회원가입 후 로그인 창 이동했을시 경우만 예외처리
+                redirectURI = "http://localhost:8080/"
         }
+
+        //println("redirectURI = " + redirectURI);
         return "redirect:" + redirectURI
     }
 
