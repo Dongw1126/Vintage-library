@@ -6,6 +6,9 @@ import org.springframework.stereotype.Service
 
 @Service
 class BookService(val bookRepository: BookRepository) {
+    fun findByBookId(bookId: Long) : Book? {
+        return bookRepository.findByBookid(bookId)
+    }
     fun findByName(bookname: String) : Book? {
         return bookRepository.findByBookName(bookname)
     }
