@@ -84,7 +84,7 @@
 
 <body>
 <div id="btn_group">
-    <button th:if="${session.user != null}" id="mypage" onClick="location.href='mypage'"><b>마이페이지</b></button>
+    <button th:if="${session.user != null}" id="mypage" onClick="location.href='mypageinfo'"><b>마이페이지</b></button>
     <button th:if="${session.user != null}" id="logout" onClick="location.href='logout'"><b>로그아웃</b></button>
     <button th:if="${session.user == null}" id="login" onClick="location.href='login'"><b>로그인</b></button>
 </div>

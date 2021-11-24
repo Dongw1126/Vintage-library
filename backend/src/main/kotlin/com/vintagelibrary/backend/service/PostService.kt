@@ -17,8 +17,8 @@ class PostService(val bookRepository: BookRepository) {
         return bookRepository.findById(id)
     }
 
-    fun save(book: Book){
-        bookRepository.save(book)
+    fun save(book: Book): Book {
+        return bookRepository.save(book)
     }
 
     fun count() : Long{

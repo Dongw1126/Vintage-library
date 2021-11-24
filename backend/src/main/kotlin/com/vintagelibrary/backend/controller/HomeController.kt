@@ -29,12 +29,6 @@ class HomeController(val userService: UserService, val bookService: BookService)
         return "mainpage"
     }
 
-    @GetMapping("/mypage")
-    fun mypage(session: HttpSession, response: HttpServletResponse) : String{
-        checkLogin(session, response)
-        return "mypage"
-    }
-
     @GetMapping("/register")
     fun register_form(session: HttpSession, response: HttpServletResponse) : String{
         checkLogin(session, response)

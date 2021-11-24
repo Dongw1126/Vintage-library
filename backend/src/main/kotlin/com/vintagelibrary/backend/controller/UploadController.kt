@@ -1,6 +1,9 @@
 package com.vintagelibrary.backend.controller
 
 import com.vintagelibrary.backend.domain.entity.Book
+import com.vintagelibrary.backend.domain.entity.Booktrans
+import com.vintagelibrary.backend.domain.entity.User
+import com.vintagelibrary.backend.service.BooktransService
 import com.vintagelibrary.backend.service.PostService
 import org.springframework.util.StringUtils
 import org.springframework.web.bind.annotation.CrossOrigin
@@ -10,14 +13,14 @@ import org.springframework.web.bind.annotation.RestController
 import org.springframework.web.multipart.MultipartFile
 import java.util.*
 import javax.servlet.http.HttpServletRequest
-
+import javax.servlet.http.HttpSession
 
 @CrossOrigin
 @RestController
-class UploadController(val postService: PostService) {
+class UploadController(val postService: PostService, val booktransService: BooktransService) {
     @PostMapping("/upload")
     // bookname author publisher
-    fun upload(req: HttpServletRequest, @RequestParam("image") multipartFile: MultipartFile) : String{
+    fun upload(session: HttpSession, req: HttpServletRequest, @RequestParam("image") multipartFile: MultipartFile) : String{
 
 
         /*
@@ -41,7 +44,11 @@ class UploadController(val postService: PostService) {
         imageName = (1+postService.count()).toString() + "_" + imageName
         //imageName = bookId_원래이름
         postService.imageUpload(uploadDir, imageName, multipartFile)
-        postService.save(Book(bookName, author, publisher, quality, booktype, price, comment, imageName))
+        val currentBook = postService.save(Book(bookName, author, publisher, quality, booktype, price, comment, imageName))
+        val currentUser: User = session.getAttribute("user") as User
+
+        booktransService.save(Booktrans(currentBook.bookid, -1, currentUser.id, true))
+
         return "<script>" + "location.href='/';" + "</script>";
     }
 }
