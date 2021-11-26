@@ -8,6 +8,8 @@ import com.vintagelibrary.backend.service.UserService
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PostMapping
+import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpSession
 
 @Controller
@@ -22,7 +24,9 @@ class MypageController (val booktransService: BooktransService,
 
         data class BookTransInfo(var bookImage:String, var bookName:String,
                               var bookAuthor:String, var bookStat: String,
-                              var bookSeller: String, var bookBuyer: String, var sellerAccount: String? = "")
+                              var bookSeller: String, var bookBuyer: String,
+                              var transId: Long?, var sellerAccount: String? = "")
+
         data class CountInfo(var inCart:Int, var inPur:Int, var pur:Int, var inSell:Int, var sell:Int)
 
         val buyingBookList = mutableListOf<BookTransInfo>()
@@ -48,7 +52,8 @@ class MypageController (val booktransService: BooktransService,
                     stat = "구매완료"
                 }
 
-                val obj = BookTransInfo(b!!.imageName, b.bookName, b.author, stat, seller.name, user.name, seller.account)
+                val obj = BookTransInfo(b!!.imageName, b.bookName, b.author, stat,
+                                        seller.name, user.name, item.transId, seller.account)
                 buyingBookList.add(obj)
             }
         }
@@ -72,7 +77,7 @@ class MypageController (val booktransService: BooktransService,
                     stat = "판매완료"
                 }
 
-                val obj = BookTransInfo(b!!.imageName, b.bookName, b.author, stat, user.name, buyer)
+                val obj = BookTransInfo(b!!.imageName, b.bookName, b.author, stat, user.name, buyer, item.transId)
                 sellingBookList.add(obj)
             }
         }
@@ -90,5 +95,14 @@ class MypageController (val booktransService: BooktransService,
         return "mypage"
     }
 
+    @PostMapping("/payconfirm")
+    fun paymentConfirm(req: HttpServletRequest): String {
+        val transId = req.getParameter("transId")
+        val bookTransInfo = booktransService.findById(transId.toLong())
+        bookTransInfo.isInPurchase = false
+        booktransService.save(bookTransInfo)
+
+        return "redirect:/mypageinfo"
+    }
 
 }

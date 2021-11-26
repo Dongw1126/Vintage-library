@@ -75,7 +75,11 @@
                 <div>
                     <span class="title" th:text="${selling.bookName}"></span><br>
                     <span class="author" th:text="${selling.bookAuthor}"></span><br><br>
-                    <span class="user" th:text="'구매자: ' + ${selling.bookBuyer}"></span><br>
+                    <span class="user" th:text="'구매자: ' + ${selling.bookBuyer}"></span>
+                    <form action="/payconfirm" method="post">
+                        <input name="transId" type="hidden" th:value="${selling.transId}">
+                        <button class="user" type="submit">입금확인</button><br>
+                    </form>
                     <span class="status" th:text="${selling.bookStat}"></span><br>
                 </div>
             </div>
