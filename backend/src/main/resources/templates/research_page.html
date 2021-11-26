@@ -245,8 +245,14 @@
           </div>
           <div class="book_button">
             <br><br><br><br>
-            <form action="detail1" method="post">
+            <form action="detail" method="post">
               <input type="hidden" th:value="${book.bookName}" name="bookname">
+              <input type="hidden" th:value="${book.bookType}" name="booktype">
+              <input type="hidden" th:value="${book.author}" name="bookauthor">
+              <input type="hidden" th:value="${book.publisher}" name="bookpub">
+              <input type="hidden" th:value="${book.comm}" name="bookcomm">
+              <input type="hidden" th:value="${book.quality}" name="bookqual">
+              <input type="hidden" th:value="${book.price}" name="bookpri">
               <button type="submit">자세히 보기</button>
             </form>
             <div class="trade_status_selling">
@@ -263,9 +269,6 @@
 
     </div>
   </section>
-
-<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-<script src="/js/bookdetail.js"></script>
 </body>
 
 </html>

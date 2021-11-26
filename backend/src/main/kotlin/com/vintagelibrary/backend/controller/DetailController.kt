@@ -15,13 +15,26 @@ import javax.servlet.http.HttpSession
 @Controller
 class DetailController {
 
-    @PostMapping("/detail1")
-    @ResponseBody // js 사용 위함
+    @PostMapping("/detail")
+    //@ResponseBody // js 사용 위함
     fun detail(req: HttpServletRequest, model : Model) : String{
         try{
             // name id pw email address
             val name = req.getParameter("bookname")
+            val type = req.getParameter("booktype")
+            val auth = req.getParameter("bookauthor")
+            val pub = req.getParameter("bookpub")
+            val comm = req.getParameter("bookcomm")
+            val qual = req.getParameter("bookqual")
+            val pri = req.getParameter("bookpri")
+
             model.addAttribute("bookname", name)
+            model.addAttribute("btype", type)
+            model.addAttribute("bauth", auth)
+            model.addAttribute("bpub", pub)
+            model.addAttribute("bcomm", comm)
+            model.addAttribute("bqual", qual)
+            model.addAttribute("bpri", pri)
         }catch (e:Exception){
             e.printStackTrace()
         }

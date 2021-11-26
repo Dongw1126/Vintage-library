@@ -16,10 +16,14 @@
   .book_title{
   padding-left: 25%;
   margin-bottom: 2%;
+  font-size: 50px;
+  color: white;
 
   }
   .book_author{
     padding-left: 25%;
+    font-size: 30px;
+    color: black;
 
   }
   .book_image{
@@ -139,7 +143,7 @@
     <div class="book_title" id="book_title" th:text="${bookname}">
     </div>
 
-    <div class="book_author" id="book_author">
+    <div class="book_author" id="book_author" th:text="${bauth}">
     </div>
 </div>
 
@@ -147,7 +151,23 @@
 </div>
 <Br>
 
-<div class="book_info" id="book_info">
+<div class="book_info" id="book_info" th:text="${btype}">
+</div>
+<Br>
+
+<div class="book_info" id="book_info" th:text="${bpub}">
+</div>
+<Br>
+
+<div class="book_info" id="book_info" th:text="${bcomm}">
+</div>
+<Br>
+
+<div class="book_info" id="book_info" th:text="${bqual}">
+</div>
+<Br>
+
+<div class="book_info" id="book_info" th:text="${bpri}">
 </div>
 <Br>
 
