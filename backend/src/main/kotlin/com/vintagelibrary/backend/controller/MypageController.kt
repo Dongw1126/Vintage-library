@@ -1,6 +1,5 @@
 package com.vintagelibrary.backend.controller
 
-import com.vintagelibrary.backend.domain.entity.Book
 import com.vintagelibrary.backend.domain.entity.User
 import com.vintagelibrary.backend.service.BookService
 import com.vintagelibrary.backend.service.BooktransService
@@ -12,7 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping
 import javax.servlet.http.HttpSession
 
 @Controller
-class MypageController (session: HttpSession, val booktransService: BooktransService,
+class MypageController (val booktransService: BooktransService,
                         val bookService: BookService, val userService: UserService, val cartService: CartService) {
     @GetMapping("/mypageinfo")
     fun getInfo(model: Model, session: HttpSession): String {
@@ -23,7 +22,7 @@ class MypageController (session: HttpSession, val booktransService: BooktransSer
 
         data class BookTransInfo(var bookImage:String, var bookName:String,
                               var bookAuthor:String, var bookStat: String,
-                              var bookSeller: String, var bookBuyer: String)
+                              var bookSeller: String, var bookBuyer: String, var sellerAccount: String? = "")
         data class CountInfo(var inCart:Int, var inPur:Int, var pur:Int, var inSell:Int, var sell:Int)
 
         val buyingBookList = mutableListOf<BookTransInfo>()
@@ -34,39 +33,46 @@ class MypageController (session: HttpSession, val booktransService: BooktransSer
         var pur = 0
         var inSell = 0
         var sell = 0
-
+        
+        // 현재 사용자가 구매중인 리스트
         if (buyingList != null) {
             for(item in buyingList) {
                 val b = bookService.findByBookId(item.bookId!!)
-                var seller = userService.findByUserId(item.sellerId.toString()) as User
+                val seller = userService.findById(item.sellerId!!)
                 var stat = ""
                 if (item.isInPurchase) {
                     inPur++
-                    stat = "구매중"
+                    stat = "구매진행중"
                 } else {
                     pur++
                     stat = "구매완료"
                 }
 
-                val obj = BookTransInfo(b!!.imageName, b!!.bookName, b!!.author, stat, seller.name, user.name)
+                val obj = BookTransInfo(b!!.imageName, b.bookName, b.author, stat, seller.name, user.name, seller.account)
                 buyingBookList.add(obj)
             }
         }
 
+        // 현재 사용자가 판매중인 리스트
         if (sellingList != null) {
             for(item in sellingList) {
                 val b = bookService.findByBookId(item.bookId!!)
                 var buyer = "미정"
+                if (item.buyerId != -1L) {
+                    val tmp = userService.findById(item.buyerId!!)
+                    buyer = tmp.name
+                }
                 var stat = ""
                 if (item.isInPurchase) {
                     inSell++
-                    stat = "판매중"
+                    if (buyer.equals("미정")) stat = "판매중"
+                    else stat = "구매진행중"
                 } else {
                     sell++
                     stat = "판매완료"
                 }
 
-                val obj = BookTransInfo(b!!.imageName, b!!.bookName, b!!.author, stat, user.name, buyer)
+                val obj = BookTransInfo(b!!.imageName, b.bookName, b.author, stat, user.name, buyer)
                 sellingBookList.add(obj)
             }
         }

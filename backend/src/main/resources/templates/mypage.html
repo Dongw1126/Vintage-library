@@ -75,8 +75,8 @@
                 <div>
                     <span class="title" th:text="${selling.bookName}"></span><br>
                     <span class="author" th:text="${selling.bookAuthor}"></span><br><br>
-                    <span class="user" th:text="'판매자: ' + ${selling.bookSeller}"></span><br>
-                    <span th:text="${selling.bookStat}" class="status"></span><br>
+                    <span class="user" th:text="'구매자: ' + ${selling.bookBuyer}"></span><br>
+                    <span class="status" th:text="${selling.bookStat}"></span><br>
                 </div>
             </div>
 
@@ -86,39 +86,16 @@
                 <div class="headerTitle">구매목록</div>
             </div>
             <hr>
-            <div class="book">
+            <div th:each="buying: ${buyingBookList}" class="book">
                 <div>
-                    <img src="/img/brain.png"/>
+                    <img th:src="@{${'/image-upload/' + buying.bookImage}}"/>
                 </div>
                 <div>
-                    <span class="title">이토록 뜻밖의 뇌과학</span><br>
-                    <span class="author">리사 펠드먼 배럿</span><br><br>
-                    <span class="user">구매자: 미정</span><br>
-                    <span class="status">판매중</span><br>
-                </div>
-            </div>
-            <hr>
-            <div class="book">
-                <div>
-                    <img src="/img/art.png"/>
-                </div>
-                <div>
-                    <span class="title">방구석 미술관</span><br>
-                    <span class="author">조원재</span><br><br>
-                    <span class="user">구매자: 미정</span><br>
-                    <span class="status">판매중</span><br>
-                </div>
-            </div>
-            <hr>
-            <div class="book">
-                <div>
-                    <img src="/img/gene.png"/>
-                </div>
-                <div>
-                    <span class="title">이기적 유전자</span><br>
-                    <span class="author">리처드 도킨스</span><br><br>
-                    <span class="user">구매자: dduan</span><br>
-                    <span class="status">판매완료</span><br>
+                    <span class="title" th:text="${buying.bookName}"></span><br>
+                    <span class="author" th:text="${buying.bookAuthor}"></span><br><br>
+                    <span class="user" th:text="'판매자: ' + ${buying.bookSeller}"></span><br>
+                    <span class="user" th:text="'계좌번호: ' + ${buying.sellerAccount}"></span><br>
+                    <span class="status" th:text="${buying.bookStat}"></span><br>
                 </div>
             </div>
         </div>
