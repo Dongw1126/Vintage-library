@@ -4,6 +4,7 @@ import com.vintagelibrary.backend.domain.entity.Book
 import com.vintagelibrary.backend.domain.entity.User
 import com.vintagelibrary.backend.service.BookService
 import com.vintagelibrary.backend.service.BooktransService
+import com.vintagelibrary.backend.service.CartService
 import com.vintagelibrary.backend.service.UserService
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
@@ -12,12 +13,13 @@ import javax.servlet.http.HttpSession
 
 @Controller
 class MypageController (session: HttpSession, val booktransService: BooktransService,
-                        val bookService: BookService, val userService: UserService) {
+                        val bookService: BookService, val userService: UserService, val cartService: CartService) {
     @GetMapping("/mypageinfo")
     fun getInfo(model: Model, session: HttpSession): String {
         val user = session.getAttribute("user") as User
         val buyingList = booktransService.findAllByBuyerId(user.id!!)
         val sellingList = booktransService.findAllBySellerId(user.id!!)
+        val cartList = cartService.findAllByUserId(user.id!!)
 
         data class BookTransInfo(var bookImage:String, var bookName:String,
                               var bookAuthor:String, var bookStat: String,
@@ -27,7 +29,7 @@ class MypageController (session: HttpSession, val booktransService: BooktransSer
         val buyingBookList = mutableListOf<BookTransInfo>()
         val sellingBookList = mutableListOf<BookTransInfo>()
 
-
+        var inCart = 0
         var inPur = 0
         var pur = 0
         var inSell = 0
@@ -68,7 +70,12 @@ class MypageController (session: HttpSession, val booktransService: BooktransSer
                 sellingBookList.add(obj)
             }
         }
-        val countInfo = CountInfo(0, inPur, pur, inSell, sell)
+
+        if (cartList != null) { // 현재 유저의 장바구니에 담긴 책 개수
+                inCart = cartList.size
+        }
+
+        val countInfo = CountInfo(inCart, inPur, pur, inSell, sell)
 
         model.addAttribute("sellingBookList", sellingBookList)
         model.addAttribute("buyingBookList", buyingBookList)

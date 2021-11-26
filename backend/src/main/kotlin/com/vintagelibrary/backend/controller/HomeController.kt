@@ -30,20 +30,16 @@ class HomeController(val userService: UserService, val bookService: BookService)
     }
 
     @GetMapping("/register")
-    fun register_form(session: HttpSession, response: HttpServletResponse) : String{
-        checkLogin(session, response)
-        return "bookregister"
+    fun register_form(session: HttpSession, response: HttpServletResponse) : String?{
+        if(checkLogin(session, response))
+            return "bookregister"
+        else
+            return "login"
     }
 
     @GetMapping("/search")
     fun book_search() : String{
         return "booksearch"
-    }
-
-    @GetMapping("/cart")
-    fun cart(session: HttpSession, response: HttpServletResponse) : String{
-        checkLogin(session, response)
-        return "cart"
     }
 
     @GetMapping("/detail")

@@ -15,8 +15,9 @@ class LoginController(val userService: UserService) {
     @GetMapping("/login")
     fun login_form(req : HttpServletRequest) : String{ // login으로 접근했던 URI를 받아 세션에 기억해둔다
         val referer = req.getHeader("Referer")
-        if(referer != "http://localhost:8080/login") // 다시 login으로 돌아오는 것 방지
+        if(referer != "http://localhost:8080/login") { // 다시 login으로 돌아오는 것 방지
             req.session.setAttribute("redirectURI", referer)
+        }
         return "login"
     }
 
@@ -53,7 +54,7 @@ class LoginController(val userService: UserService) {
                 redirectURI = "http://localhost:8080/"
         }
 
-        //println("redirectURI = " + redirectURI);
+        println("redirectURI = $redirectURI");
         return "redirect:" + redirectURI
     }
 
