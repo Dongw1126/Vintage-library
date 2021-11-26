@@ -69,6 +69,8 @@
             justify-content: center;
             align-items: center;
             color: #C36A2D;
+            border: 0;
+            outline: 0;
         }
         .logo {
             width: 400px;
@@ -81,23 +83,26 @@
 </head>
 
 <body>
-    <div id="btn_group">
-        <button th:if="${session.user != null}" id="mypage" onClick="location.href='mypage'"><b>마이페이지</b></button>
-        <button th:if="${session.user != null}" id="logout" onClick="location.href='logout'"><b>로그아웃</b></button>
-        <button th:if="${session.user == null}" id="login" onClick="location.href='login'"><b>로그인</b></button>
-    </div>
+<div id="btn_group">
+    <button th:if="${session.user != null}" id="mypage" onClick="location.href='mypageinfo'"><b>마이페이지</b></button>
+    <button th:if="${session.user != null}" id="logout" onClick="location.href='logout'"><b>로그아웃</b></button>
+    <button th:if="${session.user == null}" id="login" onClick="location.href='login'"><b>로그인</b></button>
+</div>
+<form action="research" method="get">
     <div class="content">
         <a href="/">
             <img class="logo" src="/img/Vintage Library-logo.png">
-          </a> 
+        </a>
         <br>
         <div id="searchbox">
-            <input type="text" id="search-txt" placeholder="책 이름 또는 저자를 입력하세요." style="width:400px; height:30px;">
-            <a id="search-btn" href="research">
+            <input type="text" id="search-txt" name ="qs" placeholder="책 이름 또는 저자를 입력하세요." style="width:400px; height:30px;">
+            <button type="submit" id="search-btn" style="cursor:pointer">
                 <i class="fas fa-search"></i>
-            </a>
+            </button>
+            </input>
         </div>
     </div>
+</form>
 </body>
 
 </html>
