@@ -136,7 +136,7 @@
 
 <body>
 <div class="top-container">
-    <div class="book_title" id="book_title">
+    <div class="book_title" id="book_title" th:text="${bookname}">
     </div>
 
     <div class="book_author" id="book_author">
@@ -154,6 +154,9 @@
 <div class="content_box_status" id="book_status">
     책의 상태
 </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="/js/bookdetail.js"></script>
 
 </body>
 
