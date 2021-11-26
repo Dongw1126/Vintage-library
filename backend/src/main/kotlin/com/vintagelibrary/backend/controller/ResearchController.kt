@@ -1,6 +1,7 @@
 package com.vintagelibrary.backend.controller
 
 import com.vintagelibrary.backend.service.BookService
+import com.vintagelibrary.backend.service.BooktransService
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam
 import javax.servlet.http.HttpSession
 
 @Controller
-class ResearchController (val bookService: BookService){
+class ResearchController (val bookService: BookService, val booktransService: BooktransService){
 
     @GetMapping("/research")
     fun research(model : Model, @RequestParam qs : String) : String{
@@ -27,7 +28,17 @@ class ResearchController (val bookService: BookService){
         var bookList = bookService.searchByBookname(qs)
         if(bookList != null)
             bookList = bookList.reversed() // 최신순으로 뒤집어줌
+
+        val bookStatus = mutableListOf<Boolean>()
+        if (bookList != null) {
+            for(item in bookList) {
+                val tmp = booktransService.findByBookId(item.bookid!!)
+                bookStatus.add(tmp.isInPurchase)
+            }
+        }
+
         model.addAttribute("bookList", bookList)
+        model.addAttribute("bookStatus", bookStatus)
         return "research_page"
     }
 }
