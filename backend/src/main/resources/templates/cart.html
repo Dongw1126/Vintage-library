@@ -28,11 +28,13 @@
         <center>
             <a href="/">
                 <img class="logo" src="/img/Vintage Library-logo.png">
-              </a> 
+              </a>
             <div class="search" style="position: relative; top: 15px;">
                 <i class="fas fa-search"></i>
-                <input type="text" placeholder="책 이름 또는 저자를 입력하세요." style="width:400px; height:30px;">
-                <button id="search" onclick="location.href='research'">검색</button>
+                <form action="research" method="get">
+                    <input type="text" name="qs" placeholder="책 이름 또는 저자를 입력하세요." style="width:400px; height:30px;">
+                    <button id="search" type="submit">검색</button>
+                </form>
             </div>
         </center>
         <br><br><br>
@@ -46,35 +48,24 @@
                     <th id="book-title-head">상품명</th>
                     <th>가격</th>
                     <th>품질</th>
-                    <th>상품ID</th>
                     <th>삭제</th>
                 </tr>
             </thead>
             <tbody id="cart-table-body">
-                <tr>
-                    <td><img class="book-image" src="/img/book_image.png" alt="book_image"></td>
-                    <td class="book-title"><a href="book_link">클린 코드 Clean Code - 애자일 소프트웨어 장인 정신</a></td>
-                    <td class=" book-price">15,000원</td>
-                    <td class="book-quality">중</td>
-                    <td class="book-id">A0001</td>
-                    <td><button class="delete-button">삭제</button></td>
-                </tr>
-                <tr>
-                    <td><img class="book-image" src="/img/book_image.png" alt="book_image"></td>
-                    <td class="book-title"><a href="book_link">가상 면접 사례로 배우는 대규모 시스템 설계 기초</a></td>
-                    <td class="book-price">25,000원</td>
-                    <td class="book-quality">최상</td>
-                    <td class="book-id">A0002</td>
-                    <td><button class="delete-button">삭제</button></td>
-                </tr>
-                <tr>
-                    <td><img class="book-image" src="/img/book_image.png" alt="book_image"></td>
-                    <td class="book-title"><a href="book_link">이것이 취업을 위한 코딩 테스트다 with 파이썬</a></td>
-                    <td class="book-price">10,000원</td>
-                    <td class="book-quality">하</td>
-                    <td class="book-id">A0003</td>
-                    <td><button class="delete-button">삭제</button></td>
-                </tr>
+                <form action="cart" method="post">
+                    <tr th:each="book : ${books}">
+                            <td><img class="book-image" th:src="@{${'/image-upload/' + book.imageName}}" alt="book_image"></td>
+                            <td class="book-title"><a href="book_link" th:text="${book.bookName}">클린 코드 Clean Code - 애자일 소프트웨어 장인 정신</a></td>
+                            <td class="book-price" th:text="${book.price}">15,000원</td>
+                            <td class="book-quality" th:text="${book.quality}">중</td>
+                                <td>
+                                    <div>
+                                        <input th:value="${book.bookid}" name="deleteBookIds" type="checkbox">
+                                        <button class="delete-button" type="submit">삭제</button>
+                                    </div>
+                                </td>
+                        </tr>
+                </form>
             </tbody>
         </table>
         <br>
@@ -86,7 +77,8 @@
             <button class="buy-button" onClick="location.href='./order'">구매하기</button>
         </div>
     </div>
-    <script src="./js/cart.js"></script>
+    <script src="./js/cart.js?ver=1"></script>
+
 </body>
 
 </html>

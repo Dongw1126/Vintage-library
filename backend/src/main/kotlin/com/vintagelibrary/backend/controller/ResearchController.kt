@@ -25,6 +25,8 @@ class ResearchController (val bookService: BookService){
             }
         }*/
         var bookList = bookService.searchByBookname(qs)
+        if(bookList != null)
+            bookList = bookList.reversed() // 최신순으로 뒤집어줌
         model.addAttribute("bookList", bookList)
         return "research_page"
     }
