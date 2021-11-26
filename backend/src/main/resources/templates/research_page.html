@@ -220,7 +220,7 @@
           <div class="book_image">
             <A href="detail" target="blank">
               <img th:src="@{${'/image-upload/' + book.imageName}}"
-                   width="232px" height="302px"style="vertical-align:middle;"></A>
+                   width="232px" height="302px"style="vertical-align:middle;" onclick="bookdetail(book.bookName)"></A>
 
 
               <!--            <img th:src="@{${'image-upload/' + book.imageName}}" width="232px" height="302px"
@@ -258,6 +258,9 @@
       </form>
     </div>
   </section>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="/js/bookdetail.js"></script>
 </body>
 
 </html>
