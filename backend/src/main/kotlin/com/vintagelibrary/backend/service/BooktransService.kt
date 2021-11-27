@@ -10,6 +10,10 @@ class BooktransService(val booktransRepository: BooktransRepository) {
         return booktransRepository.save(booktrans);
     }
 
+    fun findById(booktransId: Long): Booktrans {
+        return booktransRepository.findById(booktransId).get()
+    }
+
     fun findByBookId(bookId: Long): Booktrans {
         return booktransRepository.findByBookId(bookId)
     }
