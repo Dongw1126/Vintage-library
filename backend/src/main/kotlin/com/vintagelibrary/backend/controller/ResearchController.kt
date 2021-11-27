@@ -29,11 +29,11 @@ class ResearchController (val bookService: BookService, val booktransService: Bo
         if(bookList != null)
             bookList = bookList.reversed() // 최신순으로 뒤집어줌
 
-        val bookStatus = mutableListOf<Boolean>()
+        val bookStatus = mutableListOf<Long>()
         if (bookList != null) {
             for(item in bookList) {
                 val tmp = booktransService.findByBookId(item.bookid!!)
-                bookStatus.add(tmp.isInPurchase)
+                bookStatus.add(tmp.state)
             }
         }
 

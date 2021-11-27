@@ -100,6 +100,7 @@ class MypageController (val booktransService: BooktransService,
         val transId = req.getParameter("transId")
         val bookTransInfo = booktransService.findById(transId.toLong())
         bookTransInfo.isInPurchase = false
+        bookTransInfo.state = 2L
         booktransService.save(bookTransInfo)
 
         return "redirect:/mypageinfo"

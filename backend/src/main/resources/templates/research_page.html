@@ -246,13 +246,14 @@
           <div class="book_button">
             <br><br><br><br>
             <div class="trade_status_selling">
-              <font size="4" color="white" th:if="${bookStatus[iter.index]}"><b>판매중</b></font>
-              <font size="4" color="white" th:unless="${bookStatus[iter.index]}"><b>판매완료</b></font>
+              <font size="4" color="white" th:if="${bookStatus[iter.index] == 0}"><b>판매중</b></font>
+              <font size="4" color="white" th:if="${bookStatus[iter.index] == 1}"><b>구매 진행중</b></font>
+              <font size="4" color="white" th:if="${bookStatus[iter.index] == 2}"><b>판매완료</b></font>
             </div>
             <br>
 
-            <input type="checkbox" name="books" th:value="${book.bookid}" th:if="${bookStatus[iter.index]}">
-            <button type="submit" id="cart" value="장바구니" th:if="${bookStatus[iter.index]}">장바구니 넣기</button>
+            <input type="checkbox" name="books" th:value="${book.bookid}" th:if="${bookStatus[iter.index] == 0}">
+            <button type="submit" id="cart" value="장바구니" th:if="${bookStatus[iter.index] == 0}">장바구니 넣기</button>
 
           </div>
         </div>
