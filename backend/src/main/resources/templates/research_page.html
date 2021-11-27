@@ -211,16 +211,14 @@
     <div class="box">
       <h2>전체 상품</h2>
       <div class="clear"></div>
-      <form action="cart" method="get">
-        <div th:each="book, iter : ${bookList}">
+        <div th:each="book : ${bookList}">
 <!--
           <li th:text="${book.imageName}" class="b_t"></li>
 -->
 
           <div class="book_image">
-            <A href="detail" target="blank">
               <img th:src="@{${'/image-upload/' + book.imageName}}"
-                   width="232px" height="302px"style="vertical-align:middle;"></A>
+                   width="232px" height="302px"style="vertical-align:middle;">
 
 
               <!--            <img th:src="@{${'image-upload/' + book.imageName}}" width="232px" height="302px"
@@ -245,18 +243,31 @@
           </div>
           <div class="book_button">
             <br><br><br><br>
+            <form action="detail" method="post">
+              <input type="hidden" th:value="${book.bookName}" name="bookname">
+              <input type="hidden" th:value="${book.bookType}" name="booktype">
+              <input type="hidden" th:value="${book.author}" name="bookauthor">
+              <input type="hidden" th:value="${book.publisher}" name="bookpub">
+              <input type="hidden" th:value="${book.comm}" name="bookcomm">
+              <input type="hidden" th:value="${book.quality}" name="bookqual">
+              <input type="hidden" th:value="${book.price}" name="bookpri">
+              <input type="hidden" th:value="${book.imageName}" name="bookimage">
+              <button class="trade_status_selling" style= "color:white; font-weight:bold; font-size:15px;" type="submit">자세히 보기</button>
+
+            </form>
+            <br>
             <div class="trade_status_selling">
               <font size="4" color="white" th:if="${bookStatus[iter.index]}"><b>판매중</b></font>
               <font size="4" color="white" th:unless="${bookStatus[iter.index]}"><b>판매완료</b></font>
             </div>
             <br>
-
-            <input type="checkbox" name="books" th:value="${book.bookid}" th:if="${bookStatus[iter.index]}">
-            <button type="submit" id="cart" value="장바구니" th:if="${bookStatus[iter.index]}">장바구니 넣기</button>
-
+            <form action="cart" method="get">
+              <input type="checkbox" name="books" th:value="${book.bookid}">
+              <button type="submit" id="cart" value="장바구니">장바구니 넣기</button>
+            </form>
           </div>
         </div>
-      </form>
+
     </div>
   </section>
 </body>

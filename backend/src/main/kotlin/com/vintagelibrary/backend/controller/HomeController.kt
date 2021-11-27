@@ -44,7 +44,7 @@ class HomeController(val userService: UserService, val bookService: BookService)
 
     @GetMapping("/detail")
     fun detail() : String{
-        return "detailpage"
+        return "detailtest"
     }
 
     fun checkLogin(session: HttpSession, response: HttpServletResponse) : Boolean{ // 로그인 검사
