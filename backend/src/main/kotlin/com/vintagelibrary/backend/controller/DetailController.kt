@@ -8,6 +8,9 @@ import org.springframework.transaction.annotation.Transactional
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.ResponseBody
+import org.springframework.web.multipart.MultipartFile
+import java.nio.file.Path
+import java.nio.file.Paths
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 import javax.servlet.http.HttpSession
@@ -40,6 +43,13 @@ class DetailController {
 
 
         return "detailtest";
+    }
+
+    fun imageGet(uploadDir: String?, fileName: String multipartFile: MultipartFile){
+        val getPath: Path = Paths.get(uploadDir)
+        try{
+
+        }
     }
 
 
