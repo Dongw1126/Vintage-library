@@ -211,7 +211,7 @@
     <div class="box">
       <h2>전체 상품</h2>
       <div class="clear"></div>
-        <div th:each="book : ${bookList}">
+        <div th:each="book, iter : ${bookList}">
 <!--
           <li th:text="${book.imageName}" class="b_t"></li>
 -->
