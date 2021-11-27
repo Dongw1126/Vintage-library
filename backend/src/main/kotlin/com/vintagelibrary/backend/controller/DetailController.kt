@@ -29,6 +29,7 @@ class DetailController {
             val comm = req.getParameter("bookcomm")
             val qual = req.getParameter("bookqual")
             val pri = req.getParameter("bookpri")
+            val image = req.getParameter("bookimage")
 
             model.addAttribute("bookname", name)
             model.addAttribute("btype", type)
@@ -37,6 +38,7 @@ class DetailController {
             model.addAttribute("bcomm", comm)
             model.addAttribute("bqual", qual)
             model.addAttribute("bpri", pri)
+            model.addAttribute("bimage", image)
         }catch (e:Exception){
             e.printStackTrace()
         }
@@ -45,12 +47,12 @@ class DetailController {
         return "detailtest";
     }
 
-    fun imageGet(uploadDir: String?, fileName: String multipartFile: MultipartFile){
+   /*fun imageGet(uploadDir: String?, fileName: String multipartFile: MultipartFile){
         val getPath: Path = Paths.get(uploadDir)
         try{
 
         }
-    }
+    }*/
 
 
 }

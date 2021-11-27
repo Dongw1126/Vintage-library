@@ -96,7 +96,8 @@
 <br>
 
 <div class="book_image" id="main_img">
-    <img src="/img/book1detail1.jpg" style="width:350px;">
+    <!--<img src="/img/book1detail1.jpg" style="width:350px;">-->
+    <img th:src="@{${'/image-upload/' + bimage}}" style="width:350px;" />
 </div>
 <div class="book_info">
     <ul class="book_df">
@@ -116,9 +117,6 @@
         <li><img src="/img/book1detail3.jpg" class="content_box_status_image"></li>
     </ul>
 </div>
-
-
-
 
 
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
