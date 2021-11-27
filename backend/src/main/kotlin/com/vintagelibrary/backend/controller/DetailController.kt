@@ -16,7 +16,6 @@ import javax.servlet.http.HttpSession
 class DetailController {
 
     @PostMapping("/detail")
-    //@ResponseBody // js 사용 위함
     fun detail(req: HttpServletRequest, model : Model) : String{
         try{
             // name id pw email address

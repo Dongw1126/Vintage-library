@@ -18,13 +18,14 @@
   margin-bottom: 2%;
   font-size: 50px;
   color: white;
+  font-weight: bold;
 
   }
   .book_author{
     padding-left: 25%;
     font-size: 30px;
-    color: black;
-
+    color: white;
+    font-weight: bold;
   }
   .book_image{
     position : relative;
@@ -35,22 +36,13 @@
   .book_info{
     position : relative;
     padding-left: 3%;
-
+    font-weight: bold;
     float : left;
   }
   li{
     list-style : none;
   }
-  .book_price{
-    font-size : 20px;
-    margin-top : 15px;
-    line-height : 150%;
-  }
-  .book_saleprice{
-    font-size : 20px;
-    margin-top : 15px;
-    line-height : 150%;
-  }
+
   .book_saleprice span{
     font-size : 25px;
     font-weight : bold;
@@ -62,21 +54,6 @@
     margin-top : 15px;
     line-height : 150%;
   }
-  .book_date{
-    font-size : 20px;
-    margin-top : 15px;
-    line-height : 150%;
-  }
-  .book_score{
-    font-size : 20px;
-    margin-top : 15px;
-    line-height : 150%;
-  }
-  .book_status{
-    font-size : 20px;
-    margin-top : 15px;
-    line-height : 150%;
-  }
   .book_status span{
     font-size : 25px;
     margin-top : 15px;
@@ -84,51 +61,15 @@
     color : #298A08;
     font-weight : bold;
   }
-
   .content_box_status{
     position: relative;
     font-size : 25px;
     font-weight : bold;
-    padding-top : 600px;
-    padding-left: 25%;
+    padding-top : 400px;
+    padding-left: 5%;
 
   }
-  .content_box_status_image{
-    position : relative;
-    width : 500px;
-    padding-left: 40%;
 
-
-  }
-  .content_box_info{
-    position : relative;
-    height : 250px;
-    width : 110px;
-    font-size : 25px;
-    font-weight : bold;
-    float : left;
-    left : 25%;
-  }
-  .content_box_info2{
-    position : relative;
-    font-size : 20px;
-
-
-    width : 800px;
-    padding-bottom : 80px;
-    border-bottom: solid 1px #614438;
-    margin-left: 10%;
-
-    left : 25%;
-  }
-
-  .content_box_setting{
-
-
-    padding-top :16px;
-
-
-  }
 
 </style>
 
@@ -142,38 +83,34 @@
 <div class="top-container">
     <div class="book_title" id="book_title" th:text="${bookname}">
     </div>
-
     <div class="book_author" id="book_author" th:text="${bauth}">
     </div>
 </div>
+<br>
 
-<div class="book_image" id="book_image">
+<div class="book_image" id="main_img">
+
 </div>
-<Br>
-
-<div class="book_info" id="book_info" th:text="${btype}">
+<div class="book_info">
+    <ul class="book_df">
+        <li th:text="'종류 : ' + ${btype}"></li><br>
+        <li th:text="'출판사 : ' + ${bpub}"></li><br>
+        <li th:text="'품질 : ' + ${bqual}"></li><br>
+        <li th:text="'책 가격 : ' + ${bpri}"></li><br>
+        <li th:text="'설명 : '+ ${bcomm}"></li><br>
+    </ul>
 </div>
-<Br>
-
-<div class="book_info" id="book_info" th:text="${bpub}">
-</div>
-<Br>
-
-<div class="book_info" id="book_info" th:text="${bcomm}">
-</div>
-<Br>
-
-<div class="book_info" id="book_info" th:text="${bqual}">
-</div>
-<Br>
-
-<div class="book_info" id="book_info" th:text="${bpri}">
-</div>
-<Br>
-
 <div class="content_box_status" id="book_status">
-    책의 상태
+    <hr>
+    책의 상태 이미지
+    <ul>
+        <li><img src="/img/book1detail1.jpg" class="content_box_status_image"></li>
+        <li><img src="/img/book1detail2.jpg" class="content_box_status_image"></li>
+        <li><img src="/img/book1detail3.jpg" class="content_box_status_image"></li>
+    </ul>
 </div>
+
+
 
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <script src="/js/bookdetail.js"></script>
