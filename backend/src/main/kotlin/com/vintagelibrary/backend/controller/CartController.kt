@@ -1,11 +1,13 @@
 package com.vintagelibrary.backend.controller
 
 import com.vintagelibrary.backend.domain.entity.Book
+import com.vintagelibrary.backend.domain.entity.Booktrans
 import com.vintagelibrary.backend.domain.entity.Cart
 import com.vintagelibrary.backend.domain.entity.User
 import com.vintagelibrary.backend.service.BookService
 import com.vintagelibrary.backend.service.BooktransService
 import com.vintagelibrary.backend.service.CartService
+import com.vintagelibrary.backend.service.UserService
 import org.springframework.stereotype.Controller
 import org.springframework.transaction.annotation.Transactional
 import org.springframework.ui.Model
@@ -18,10 +20,26 @@ import javax.servlet.http.HttpServletResponse
 import javax.servlet.http.HttpSession
 
 @Controller
-class CartController(val cartService: CartService, val bookService: BookService) {
+class CartController(val booktransService: BooktransService,
+                     val bookService: BookService, val cartService: CartService) {
 
     @GetMapping("/purchase")
-    fun purchase(){
+    fun purchase(session: HttpSession): String {
+        val currentUser: User = session.getAttribute("user") as User
+        val currentCart = cartService.findAllByUserId(currentUser.id!!)
+
+        if (currentCart != null) {
+            for(item in currentCart) {
+                val bookInfo = bookService.findByBookId(item.bookId)
+                val booktransInfo = booktransService.findByBookId(item.bookId)
+
+                booktransInfo.buyerId = currentUser.id
+                // booktransService.save(Booktrans(item.bookId, currentUser.id, booktransInfo.sellerId, true))
+                booktransService.save(booktransInfo)
+            }
+        }
+
+        return "redirect:/mypageinfo"
 /*        for(bookId in bookIds){
             val bookIdLong = bookId.toLong()
             val bookTrans = booktransService.findByBookId(bookIdLong)

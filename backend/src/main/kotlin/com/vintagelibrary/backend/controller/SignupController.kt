@@ -3,7 +3,6 @@ package com.vintagelibrary.backend.controller
 import com.vintagelibrary.backend.domain.entity.User
 import com.vintagelibrary.backend.service.UserService
 import org.springframework.stereotype.Controller
-import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.ResponseBody

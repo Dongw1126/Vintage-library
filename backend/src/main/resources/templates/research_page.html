@@ -211,7 +211,6 @@
     <div class="box">
       <h2>전체 상품</h2>
       <div class="clear"></div>
-
         <div th:each="book : ${bookList}">
 <!--
           <li th:text="${book.imageName}" class="b_t"></li>
@@ -258,13 +257,13 @@
             </form>
             <br>
             <div class="trade_status_selling">
-              <font size="4" color="white"><b>판매중</b></font>
+              <font size="4" color="white" th:if="${bookStatus[iter.index]}"><b>판매중</b></font>
+              <font size="4" color="white" th:unless="${bookStatus[iter.index]}"><b>판매완료</b></font>
             </div>
             <br>
-
             <form action="cart" method="get">
-            <input type="checkbox" name="books" th:value="${book.bookid}">
-            <button type="submit" id="cart" value="장바구니">장바구니 넣기</button>
+              <input type="checkbox" name="books" th:value="${book.bookid}">
+              <button type="submit" id="cart" value="장바구니">장바구니 넣기</button>
             </form>
           </div>
         </div>
