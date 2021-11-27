@@ -9,9 +9,9 @@
 </head>
 
 <!--
-    장바구니 페이지 – 담은 책 목록, 구매 버튼, 담은 책 삭제 
-    (구매를 누르면, 입금주소 팝업이 구현, alert 창 – 일단 보류) 
-    
+    장바구니 페이지 – 담은 책 목록, 구매 버튼, 담은 책 삭제
+    (구매를 누르면, 입금주소 팝업이 구현, alert 창 – 일단 보류)
+
     컨텐츠 순서
     로고
     검색창
@@ -20,6 +20,12 @@
     총 가격 계산
     구매하기 버튼
 -->
+<script>
+function btn(){
+  alert('구매가 완료 되었습니다.\n감사합니다.')
+  document.location.href="mainpage.html"
+}
+</script>
 
 <body>
     <link rel="stylesheet" href="./css/cart.css">
@@ -28,7 +34,7 @@
         <center>
             <a href="./mainpage.html">
                 <img class="logo" src="./img//Vintage Library-logo.png">
-              </a> 
+              </a>
             <div class="search" style="position: relative; top: 15px;">
                 <i class="fas fa-search"></i>
                 <input type="text" placeholder="책 이름 또는 저자를 입력하세요." style="width:400px; height:30px;">
@@ -48,6 +54,8 @@
                     <th>품질</th>
                     <th>상품ID</th>
                     <th>삭제</th>
+                      <th>판매자</th>
+                        <th>판매자 계좌번호</th>
                 </tr>
             </thead>
             <tbody id="cart-table-body">
@@ -58,6 +66,8 @@
                     <td class="book-quality">중</td>
                     <td class="book-id">A0001</td>
                     <td><button class="delete-button">삭제</button></td>
+                    <td class="book-id">abcd1234</td>
+                    <td class="book-id">111-523-460547</td>
                 </tr>
                 <tr>
                     <td><img class="book-image" src="./img/book_image.png" alt="book_image"></td>
@@ -66,6 +76,8 @@
                     <td class="book-quality">최상</td>
                     <td class="book-id">A0002</td>
                     <td><button class="delete-button">삭제</button></td>
+                    <td class="book-id">abcd1234</td>
+                    <td class="book-id">111-523-460547</td>
                 </tr>
                 <tr>
                     <td><img class="book-image" src="./img/book_image.png" alt="book_image"></td>
@@ -74,6 +86,8 @@
                     <td class="book-quality">하</td>
                     <td class="book-id">A0003</td>
                     <td><button class="delete-button">삭제</button></td>
+                    <td class="book-id">abcd1234</td>
+                    <td class="book-id">111-523-460547</td>
                 </tr>
             </tbody>
         </table>
@@ -83,7 +97,7 @@
         </div>
         <br>
         <div id="buy-div">
-            <button class="buy-button" onClick="location.href='./order'">구매하기</button>
+            <button class="buy-button" onclick="javascript:btn()">구매하기</button>
         </div>
     </div>
     <script src="./js/cart.js"></script>
