@@ -1,0 +1,59 @@
+body{
+    padding : 0;
+    margin : 0;
+
+}
+.top-container{
+    height : 100px;
+    background-color: #614438;
+    padding: 40px;
+
+}
+.book_title{
+    padding-left: 25%;
+    margin-bottom: 2%;
+    font-size: 50px;
+    color: white;
+    font-weight: bold;
+
+}
+.book_author{
+    padding-left: 25%;
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+}
+.book_image{
+    position : relative;
+    padding-left: 5%;
+    margin-top : 5%;
+
+}
+.book_info{
+    position : relative;
+    padding-left: 3%;
+    font-weight: bold;
+    float : left;
+}
+li{
+    list-style : none;
+}
+
+.book_saleprice span{
+    font-size : 25px;
+    font-weight : bold;
+    margin-top : 15px;
+    line-height : 150%;
+}
+.book_df{
+    font-size : 20px;
+    margin-top : 15px;
+    line-height : 150%;
+}
+.book_status span{
+    font-size : 25px;
+    margin-top : 15px;
+    line-height : 150%;
+    color : #298A08;
+    font-weight : bold;
+}
