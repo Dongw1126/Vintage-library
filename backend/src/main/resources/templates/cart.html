@@ -20,7 +20,12 @@
     총 가격 계산
     구매하기 버튼
 -->
-
+<script>
+    function btn(){
+        alert('구매가 완료 되었습니다.\n감사합니다.')
+        document.location.href="/main"
+    }
+</script>
 <body>
     <link rel="stylesheet" href="/css/cart.css">
 
@@ -74,7 +79,7 @@
         </div>
         <br>
         <div id="buy-div">
-            <button class="buy-button" onClick="location.href='./order'">구매하기</button>
+            <button class="buy-button" onclick="javascript:btn()">구매하기</button>
         </div>
     </div>
     <script src="./js/cart.js?ver=1"></script>
