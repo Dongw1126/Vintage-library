@@ -174,102 +174,100 @@
 </head>
 
 <body>
-  <div>
-    <div class="box">
-      <div style="text-align:center;">
-        <a href="/">
-          <img class="logo" src="/img/Vintage Library-logo.png">
-        </a>     
-      </div>
-
+<div>
+  <div class="box">
+    <div style="text-align:center;">
+      <a href="/">
+        <img class="logo" src="/img/Vintage Library-logo.png">
+      </a>
     </div>
 
   </div>
 
-  <nav id="main_menu">
-    <div class="box" style="text-align:center;">
-      <div class="menu-list">
-        <ul>
-          <li><a href="/">메인 페이지</a></li>
-          <li><a href="research?qs=">검색 페이지</a></li>
-          <li><a href="mypageinfo">마이 페이지</a></li>
-          <li><a href="cart">장바구니 페이지</a></li>
-          <li><a href="register">도서등록 페이지</a></li>
-          <li><a href="signup">회원가입 페이지</a></li>
-        </ul>
-      </div>
+</div>
+
+<nav id="main_menu">
+  <div class="box" style="text-align:center;">
+    <div class="menu-list">
+      <ul>
+        <li><a href="/">메인 페이지</a></li>
+        <li><a href="research?qs=">검색 페이지</a></li>
+        <li><a href="mypageinfo">마이 페이지</a></li>
+        <li><a href="cart">장바구니 페이지</a></li>
+        <li><a href="register">도서등록 페이지</a></li>
+        <li><a href="signup">회원가입 페이지</a></li>
+      </ul>
     </div>
-  </nav>
-
-  <div class="research" style="text-align:center;">
-    <form action="research" method="GET">
-      <input type="text" name="qs" placeholder="책 이름 또는 저자를 입력하세요" style="width:400px; height:30px;">
-      <button type="submit">검색</button>
-    </form>
   </div>
-  <section id="content_box">
-    <div class="box">
-      <h2>전체 상품</h2>
-      <div class="clear"></div>
-        <div th:each="book : ${bookList}">
-<!--
-          <li th:text="${book.imageName}" class="b_t"></li>
--->
+</nav>
 
-          <div class="book_image">
-              <img th:src="@{${'/image-upload/' + book.imageName}}"
-                   width="232px" height="302px"style="vertical-align:middle;">
+<div class="research" style="text-align:center;">
+  <form action="research" method="GET">
+    <input type="text" name="qs" placeholder="책 이름 또는 저자를 입력하세요" style="width:400px; height:30px;">
+    <button type="submit">검색</button>
+  </form>
+</div>
+<section id="content_box">
+  <div class="box">
+    <h2>전체 상품</h2>
+    <div class="clear"></div>
+    <div th:each="book, iter : ${bookList}">
+      <!--
+                <li th:text="${book.imageName}" class="b_t"></li>
+      -->
+
+      <div class="book_image">
+        <img th:src="@{${'/image-upload/' + book.imageName}}"
+             width="232px" height="302px"style="vertical-align:middle;">
 
 
-              <!--            <img th:src="@{${'image-upload/' + book.imageName}}" width="232px" height="302px"
-                               style="vertical-align:middle;"></A>-->
-<!--            <img src="/image-upload/3_test_image.jpg" width="232px" height="302px"
-                 style="vertical-align:middle;"></A>-->
+        <!--            <img th:src="@{${'image-upload/' + book.imageName}}" width="232px" height="302px"
+                         style="vertical-align:middle;"></A>-->
+        <!--            <img src="/image-upload/3_test_image.jpg" width="232px" height="302px"
+                         style="vertical-align:middle;"></A>-->
 
-          </div>
-          <div class="book_detail">
-            <br>
-            <A href="detail" target="blank">
-              <li th:text="${book.bookName}" class="b_t"></li>
-            </A>
-            <li th:text="${book.author}" class="b_a"></li>
-            <li th:text="${book.publisher}" class="b_a"></li>
-            <li th:text="${book.price}" class="b_m"></li>
-            <li th:text="${book.comm}" class="b_t"></li>
-            <li class="b_r"> 평점 <span>4.5/5</span> </li>
-            <li class="b_s"> 상태 : <font size="3" color="green"><b>상</b></font>
-            <!--<li th:text="${book.score}" class="b_t"></li>
-            <li th:text="${book.status}" class="b_t"></li>-->
-          </div>
-          <div class="book_button">
-            <br><br><br><br>
-            <form action="detail" method="post">
-              <input type="hidden" th:value="${book.bookName}" name="bookname">
-              <input type="hidden" th:value="${book.bookType}" name="booktype">
-              <input type="hidden" th:value="${book.author}" name="bookauthor">
-              <input type="hidden" th:value="${book.publisher}" name="bookpub">
-              <input type="hidden" th:value="${book.comm}" name="bookcomm">
-              <input type="hidden" th:value="${book.quality}" name="bookqual">
-              <input type="hidden" th:value="${book.price}" name="bookpri">
-              <input type="hidden" th:value="${book.imageName}" name="bookimage">
-              <button class="trade_status_selling" style= "color:white; font-weight:bold; font-size:15px;" type="submit">자세히 보기</button>
+      </div>
+      <div class="book_detail">
+        <br>
+        <li th:text="${book.bookName}" class="b_t"></li>
+        <li th:text="${book.author}" class="b_a"></li>
+        <li th:text="${book.publisher}" class="b_a"></li>
+        <li th:text="${book.price}" class="b_m"></li>
+        <li th:text="${book.comm}" class="b_t"></li>
+        <li class="b_r"> 평점 <span>4.5/5</span> </li>
+        <li class="b_s"> 상태 : <font size="3" color="green"><b>상</b></font>
+          <!--<li th:text="${book.score}" class="b_t"></li>
+          <li th:text="${book.status}" class="b_t"></li>-->
+      </div>
+      <div class="book_button">
+        <br><br><br><br>
+        <form action="detail" method="post">
+          <input type="hidden" th:value="${book.bookName}" name="bookname">
+          <input type="hidden" th:value="${book.bookType}" name="booktype">
+          <input type="hidden" th:value="${book.author}" name="bookauthor">
+          <input type="hidden" th:value="${book.publisher}" name="bookpub">
+          <input type="hidden" th:value="${book.comm}" name="bookcomm">
+          <input type="hidden" th:value="${book.quality}" name="bookqual">
+          <input type="hidden" th:value="${book.price}" name="bookpri">
+          <input type="hidden" th:value="${book.imageName}" name="bookimage">
+          <button class="trade_status_selling" style= "color:white; font-weight:bold; font-size:15px;" type="submit">자세히 보기</button>
 
-            </form>
-            <br>
-            <div class="trade_status_selling">
-              <font size="4" color="white" th:if="${bookStatus[iter.index]}"><b>판매중</b></font>
-              <font size="4" color="white" th:unless="${bookStatus[iter.index]}"><b>판매완료</b></font>
-            </div>
-            <br>
-            <form action="cart" method="get">
-              <input type="checkbox" name="books" th:value="${book.bookid}">
-              <button type="submit" id="cart" value="장바구니">장바구니 넣기</button>
-            </form>
-          </div>
+        </form>
+        <br>
+        <div class="trade_status_selling">
+          <font size="4" color="white" th:if="${bookStatus[iter.index]}"><b>판매중</b></font>
+          <font size="4" color="white" th:unless="${bookStatus[iter.index]}"><b>판매완료</b></font>
         </div>
-
+        <br>
+        <form action="cart" method="get">
+          <input type="checkbox" name="books" th:value="${book.bookid}">
+          <button type="submit" id="cart" value="장바구니">장바구니 넣기</button>
+        </form>
+      </div>
     </div>
-  </section>
+
+  </div>
+</section>
 </body>
 
 </html>
