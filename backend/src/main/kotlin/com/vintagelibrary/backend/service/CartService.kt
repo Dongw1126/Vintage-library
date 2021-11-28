@@ -21,4 +21,8 @@ class CartService(val cartRepository: CartRepository) {
     fun deleteByBookId(bookId: Long){
         cartRepository.deleteByBookId(bookId)
     }
+
+    fun deleteByCartId(cartId : Long){
+        cartRepository.deleteByCartId(cartId)
+    }
 }

@@ -47,7 +47,7 @@ class UploadController(val postService: PostService, val booktransService: Bookt
         val currentBook = postService.save(Book(bookName, author, publisher, quality, booktype, price, comment, imageName))
         val currentUser: User = session.getAttribute("user") as User
 
-        booktransService.save(Booktrans(currentBook.bookid, -1, currentUser.id, true))
+        booktransService.save(Booktrans(currentBook.bookid, -1, currentUser.id, true, 0L))
 
         return "<script>" + "location.href='/';" + "</script>";
     }
