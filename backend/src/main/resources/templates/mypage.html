@@ -76,10 +76,11 @@
                     <span class="title" th:text="${selling.bookName}"></span><br>
                     <span class="author" th:text="${selling.bookAuthor}"></span><br><br>
                     <span class="user" th:text="'구매자: ' + ${selling.bookBuyer}"></span>
-                    <form action="/payconfirm" method="post">
+                    <form th:if="${selling.bookStat == '구매진행중'}" action="/payconfirm" method="post">
                         <input name="transId" type="hidden" th:value="${selling.transId}">
                         <button class="user" type="submit">입금확인</button><br>
                     </form>
+                    <br th:if="${selling.bookStat != '구매진행중'}">
                     <span class="status" th:text="${selling.bookStat}"></span><br>
                 </div>
             </div>
@@ -99,6 +100,11 @@
                     <span class="author" th:text="${buying.bookAuthor}"></span><br><br>
                     <span class="user" th:text="'판매자: ' + ${buying.bookSeller}"></span><br>
                     <span class="user" th:text="'계좌번호: ' + ${buying.sellerAccount}"></span><br>
+                    <form th:if="${buying.bookStat == '구매진행중'}" action="/paycancel" method="post">
+                        <input name="transId" type="hidden" th:value="${buying.transId}">
+                        <button class="user" type="submit">구매취소</button><br>
+                    </form>
+                    <br th:if="${buying.bookStat != '구매진행중'}">
                     <span class="status" th:text="${buying.bookStat}"></span><br>
                 </div>
             </div>

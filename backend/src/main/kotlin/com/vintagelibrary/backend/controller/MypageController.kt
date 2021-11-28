@@ -44,10 +44,11 @@ class MypageController (val booktransService: BooktransService,
                 val b = bookService.findByBookId(item.bookId!!)
                 val seller = userService.findById(item.sellerId!!)
                 var stat = ""
-                if (item.isInPurchase) {
+                if (item.state == 1L) {
                     inPur++
                     stat = "구매진행중"
-                } else {
+                }
+                else if(item.state == 2L) {
                     pur++
                     stat = "구매완료"
                 }
@@ -68,11 +69,11 @@ class MypageController (val booktransService: BooktransService,
                     buyer = tmp.name
                 }
                 var stat = ""
-                if (item.isInPurchase) {
+                if (item.state == 1L || item.state == 0L) {
                     inSell++
                     if (buyer.equals("미정")) stat = "판매중"
                     else stat = "구매진행중"
-                } else {
+                } else if(item.state == 2L){
                     sell++
                     stat = "판매완료"
                 }
@@ -91,7 +92,6 @@ class MypageController (val booktransService: BooktransService,
         model.addAttribute("sellingBookList", sellingBookList)
         model.addAttribute("buyingBookList", buyingBookList)
         model.addAttribute("countInfo", countInfo)
-
         return "mypage"
     }
 
@@ -105,5 +105,19 @@ class MypageController (val booktransService: BooktransService,
 
         return "redirect:/mypageinfo"
     }
+
+    @PostMapping("/paycancel")
+    fun paymentCancel(req: HttpServletRequest): String {
+        val transId = req.getParameter("transId")
+        val bookTransInfo = booktransService.findById(transId.toLong())
+        bookTransInfo.isInPurchase = false
+        bookTransInfo.state = 0L
+        bookTransInfo.buyerId = -1L
+        booktransService.save(bookTransInfo)
+
+        return "redirect:/mypageinfo"
+    }
+
+
 
 }
