@@ -235,18 +235,16 @@
             </div>
             <div class="book_button">
               <br><br><br><br>
-              <form action="detail" method="post">
+<!--
                 <input type="hidden" th:value="${book.bookName}" name="bookname">
-                <input type="hidden" th:value="${book.bookType}" name="booktype">
-                <input type="hidden" th:value="${book.author}" name="bookauthor">
-                <input type="hidden" th:value="${book.publisher}" name="bookpub">
-                <input type="hidden" th:value="${book.comm}" name="bookcomm">
-                <input type="hidden" th:value="${book.quality}" name="bookqual">
-                <input type="hidden" th:value="${book.price}" name="bookpri">
-                <input type="hidden" th:value="${book.imageName}" name="bookimage">
-                <button class="trade_status_selling" style= "color:white; font-weight:bold; font-size:15px;" type="submit">자세히 보기</button>
+                                <img th:src="@{${'/image-upload/' + book.imageName}}"
+"onclick=|upload('${gallery}')|"
+th:attr="onclick=|upload('${gallery}')|"
 
-              </form>
+th:onclick="|upload('${command['class'].simpleName}', '${gallery}')|"
+-->
+              <button class="trade_status_selling" type="button" style= "color:white; font-weight:bold; font-size:15px;"
+                 th:attr="onclick=|newDetailTab('${book.bookid}')|">자세히 보기</button>
               <br>
               <div class="trade_status_selling">
                 <font size="4" color="white" th:if="${bookStatus[iter.index] == 0}"><b>판매중</b></font>
@@ -264,6 +262,13 @@
 
   </form>
 
+<script>
+   function newDetailTab(idx){
+      var bookid = idx;
+      window.open("http://localhost:8080/detail?bookid="+bookid)
+    }
+
+</script>
 </body>
 
 </html>
