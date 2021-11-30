@@ -2,11 +2,14 @@ package com.vintagelibrary.backend.controller
 
 import com.vintagelibrary.backend.domain.entity.Book
 import com.vintagelibrary.backend.domain.entity.User
+import com.vintagelibrary.backend.service.BookService
 import com.vintagelibrary.backend.service.CartService
 import org.springframework.stereotype.Controller
 import org.springframework.transaction.annotation.Transactional
 import org.springframework.ui.Model
+import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.ResponseBody
 import org.springframework.web.multipart.MultipartFile
 import java.nio.file.Path
@@ -16,43 +19,31 @@ import javax.servlet.http.HttpServletResponse
 import javax.servlet.http.HttpSession
 
 @Controller
-class DetailController {
+class DetailController(val bookService: BookService) {
 
-    @PostMapping("/detail")
-    fun detail(req: HttpServletRequest, model : Model) : String{
+
+    @GetMapping("/detail")
+    fun test(req: HttpServletRequest, model : Model, @RequestParam bookid : String) : String{
         try{
-            // name id pw email address
-            val name = req.getParameter("bookname")
-            val type = req.getParameter("booktype")
-            val auth = req.getParameter("bookauthor")
-            val pub = req.getParameter("bookpub")
-            val comm = req.getParameter("bookcomm")
-            val qual = req.getParameter("bookqual")
-            val pri = req.getParameter("bookpri")
-            val image = req.getParameter("bookimage")
-
-            model.addAttribute("bookname", name)
-            model.addAttribute("btype", type)
-            model.addAttribute("bauth", auth)
-            model.addAttribute("bpub", pub)
-            model.addAttribute("bcomm", comm)
-            model.addAttribute("bqual", qual)
-            model.addAttribute("bpri", pri)
-            model.addAttribute("bimage", image)
+            //println("bookId " + bookid)
+            val book = bookService.findByBookId(bookid.toLong())
+            if(book != null) {
+                model.addAttribute("bookname", book.bookName)
+                model.addAttribute("btype", book.bookType)
+                model.addAttribute("bauth", book.author)
+                model.addAttribute("bpub", book.publisher)
+                model.addAttribute("bcomm", book.comm)
+                model.addAttribute("bqual", book.quality)
+                model.addAttribute("bpri", book.price)
+                model.addAttribute("bimage", book.imageName)
+            }
+            else{
+                return "null"
+            }
         }catch (e:Exception){
             e.printStackTrace()
         }
-
-
         return "detailtest";
     }
-
-   /*fun imageGet(uploadDir: String?, fileName: String multipartFile: MultipartFile){
-        val getPath: Path = Paths.get(uploadDir)
-        try{
-
-        }
-    }*/
-
 
 }

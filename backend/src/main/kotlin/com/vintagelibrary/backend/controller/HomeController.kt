@@ -42,11 +42,6 @@ class HomeController(val userService: UserService, val bookService: BookService)
         return "booksearch"
     }
 
-    @GetMapping("/detail")
-    fun detail() : String{
-        return "detailtest"
-    }
-
     fun checkLogin(session: HttpSession, response: HttpServletResponse) : Boolean{ // 로그인 검사
         if(session.getAttribute("user") == null){ // 로그인안했을 시 해당 코드 실행 후 끝
             response.setContentType("text/html; charset=UTF-8");
