@@ -9,14 +9,24 @@ import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
+import java.io.PrintWriter
 import javax.servlet.http.HttpServletRequest
+import javax.servlet.http.HttpServletResponse
 import javax.servlet.http.HttpSession
 
 @Controller
 class MypageController (val booktransService: BooktransService,
                         val bookService: BookService, val userService: UserService, val cartService: CartService) {
     @GetMapping("/mypageinfo")
-    fun getInfo(model: Model, session: HttpSession): String {
+    fun getInfo(model: Model, session: HttpSession, response : HttpServletResponse): String? {
+        if(session.getAttribute("user") == null){
+            response.contentType = "text/html; charset=UTF-8";
+            val out : PrintWriter = response.writer;
+            out.println("<script>" + "alert(\"먼저 로그인을 해주세요\");" + "location.href=\"login\";" + "</script>");
+            out.flush();
+            return null
+        }
+
         val user = session.getAttribute("user") as User
         val buyingList = booktransService.findAllByBuyerId(user.id!!)
         val sellingList = booktransService.findAllBySellerId(user.id!!)

@@ -228,8 +228,7 @@
               <li th:text="${book.publisher}" class="b_a"></li>
               <li th:text="${book.price}" class="b_m"></li>
               <li th:text="${book.comm}" class="b_t"></li>
-              <li class="b_r"> 평점 <span>4.5/5</span> </li>
-              <li class="b_s"> 상태 : <font size="3" color="green"><b>상</b></font>
+              <li class="b_s"> 상태 : <font size="3" color="green"><b th:text="${book.quality}">상</b></font>
               <!--<li th:text="${book.score}" class="b_t"></li>
               <li th:text="${book.status}" class="b_t"></li>-->
             </div>
